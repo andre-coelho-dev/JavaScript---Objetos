@@ -1,10 +1,10 @@
 # JavaScript---Objetos
 
-Aula - 1: O que são objetos
+## Aula - 1: O que são objetos
 
-~~objeto.js~~
+### objeto.js
 
-01 - O que são objetos
+### 01 - O que são objetos
 
 Nesta aula, começaremos a abordar a questão dos objetos em JavaScript.
 Para isso, abriremos o Visual Studio Code com a pasta OBJETOS vazia e selecionaremos o segundo ícone para criarmos uma pasta.
@@ -80,9 +80,9 @@ Nesta aula conhecemos a estrutura de dados que é o objeto, entendemos que ela n
 A seguir, aprenderemos como podemos acessar essas informações do objeto, ou seja, acessar essas propriedades.
 
 
-02 - Acessando dados
+## 02 - Acessando dados
 
-~~acesso-ponto.js~~
+### acesso-ponto.js
 
 Nesta aula, aprenderemos como acessar as propriedades de um objeto.
 Vamos voltar ao VSCode, e dentro da pasta aula1, criaremos um arquivo chamado acesso_ponto.js. Para isso, selecionaremos a pasta aula1, clicaremos no primeiro ícone do lado direito da pasta OBJETOS e digitaremos "acesso_ponto.js".
@@ -210,9 +210,9 @@ Conseguimos exibir somente os três primeiros dígitos do CPF do cliente!
 Assim, aprendemos que conseguimos acessar o valor de uma propriedade de um objeto e manipulá-lo.
 
 
-03 - Acessando dados com colchetes
+## 03 - Acessando dados com colchetes
 
-~~acesso-colchete.js~~
+### acesso-colchete.js
 
 Na aula anterior, vimos como acessar uma propriedade usando o operador ponto, mas vamos entender que essa não é a única maneira que temos para acessá-las.
 Para demonstrar essa outra maneira, podemos selecionar o código inteiro do arquivo acesso_ponto.js e copiá-lo usando "Ctrl + C".
@@ -357,7 +357,7 @@ Não retorna erro e não vai quebrar o código, mas o campo é devolvido com o v
 Aprendemos que podemos acessar os campos de um objeto, e que temos a notação de ponto e de colchetes. Esta última surgiu para cenários em que, não necessariamente, sabemos quais campos acessaremos. E que ao acessarmos uma propriedade que não existe, o valor devolvido será undefined.
 
 
-- Acesse os dados
+### - Acesse os dados
 
 No JavaScript, vimos que objetos são estruturas de dados compostas por chave e valor, informações que ajudam a representar algo da vida real ou um conjunto de informações que faz sentido quando agrupado. Observe a representação abaixo:
 
@@ -375,9 +375,9 @@ Ao tentar acessar pet[“brinquedoFavorito”] iremos obter a string ”bolinha�
 -> Podemos utilizar o nome da propriedade como string dentro de colchetes [“propriedade”] para acessar as propriedades de um objeto de forma mais dinâmica.
 
 
-04 - Adicionando e alterando
+## 04 - Adicionando e alterando
 
-~~alterar.js~~
+### alterar.js
 
 Agora que sabemos acessar os valores das propriedades dos objetos, é interessante aprendermos como manipular, alterar ou criar novas propriedades.
 No VSCode, clicaremos no ícone "New File" ("Novo arquivo"), para criar um novo arquivo chamado "alterar.js" dentro da pasta aula1.
@@ -554,14 +554,14 @@ Em português, atribuição à variável constante. Logo, isso é o que não pod
 Por enquanto, esse conhecimento é satisfatório para seguirmos com o curso. Nesta aula estudamos um pouco sobre objetos, sua estrutura, formas de acessar e manipular. Aprendemos também como alterar e criar as propriedades, mesmo após o objeto já ter sido criado.
 
 
-- Para saber mais: tipos de variáveis e objetos
+### - Para saber mais: tipos de variáveis e objetos
 
 No último vídeo, vimos que podemos alterar e manipular as propriedades de um objeto mesmo quando o objeto está armazenado em uma variável do tipo const.
 Temos um artigo na plataforma que explica as diferenças entre as variáveis que podemos declarar, mas vale lembrar que as variáveis do tipo const apenas não podem ser reatribuidas, mas podem ter seu conteúdo interno alterado.
 -> https://www.alura.com.br/artigos/entenda-diferenca-entre-var-let-e-const-no-javascript?_gl=1*4a2um6*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDExMzg3MC4xNC4xLjE2OTQxMTU4NDEuMC4wLjA.*_fplc*VFhUem41UndVNFFQRzN2TjB3RWp3dnpwTGdyUGx5WkE1RTJDYlB1VkdXQmg4SDB4Z1NXenNhT2tUNUslMkJiUTZFWDFGZURHVDhqRUQzZDlPNDM2QlFlWGRIWnEzNUEybnE1M3kyRSUyQm8xbjVRQ3NIcjk4Zzh4bTklMkYlMkJETUg2bnclM0QlM0Q.
 
 
-- Para saber mais: como deletar uma propriedade?
+### - Para saber mais: como deletar uma propriedade?
 
 Já vimos como acessar, alterar e adicionar valores em um objeto. Mas ainda faltou falarmos sobre um caso: e quando queremos deletar um conjunto de chave/valor?
 Vamos considerar o objeto abaixo:
@@ -609,7 +609,7 @@ console.log(delProp) //true
 console.log(delPropInexistente) //true
 
 
-- Novos campos
+### - Novos campos
 
 Considere o seguinte código:
 
@@ -629,11 +629,11 @@ Para adicionar as novas propriedades precisamos somente informar o novo campo e 
 -> Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
 
 
-- Faça como eu fiz: criando objetos
+### - Faça como eu fiz: criando objetos
 Nesta aula, começamos a aprender sobre a estrutura de dados chamada de objetos no Javascript, muito importante em linguagens de programação modernas. Estudamos como criar um objeto, adicionar propriedades e alterar seus valores.
 
 
-- O que aprendemos?
+### - O que aprendemos?
 Nessa aula, você aprendeu:
 Que objeto é um tipo de dado que reflete uma abstração dos objetos da vida real;
 Que a estrutura de um objeto literal no JavaScript é composta por pares de chave: valor separados por vírgula, dentro de chaves { };
@@ -642,11 +642,11 @@ Que para adicionar e manipular dados em um objeto precisamos saber como acessar 
 
 
 
-Aula - 2: Manipulação de objetos
+## Aula - 2: Manipulação de objetos
 
-~~tipos.js~~
+### tipos.js
 
-Tipos de dados e valores
+## 01 - Tipos de dados e valores
 
 Na aula anterior, vimos algumas coisas que podemos armazenar em um objeto e neste vídeo aprofundaremos como e o que podemos guardar, conhecendo algumas estruturas mais elaboradas.
 
@@ -726,4 +726,658 @@ Dessa forma, vamos acessar somente o array que contém os telefones. Podemos sal
 
 Note que nos devolveu somente o array com os telefones. Este array está guardado em uma propriedade de um objeto.
 
-Assim, conseguimos armazenar um array, e conseguimos estipular como seriam as operações e o que poderíamos fazer. Mas e se desejarmos guardar outro objeto?
+Assim, conseguimos armazenar um array, e conseguimos estipular como seriam as operações e o que poderíamos fazer. Mas e se desejarmos guardar outro objeto
+
+
+### - Selecione os tipos mais adequados
+
+Digamos que você precise criar a estrutura de um novo objeto para representar uma pessoa estudante no sistema de uma universidade com os seguintes campos:
+
+Nome: um campo de texto com o nome completo do estudante;
+Matrícula: um número inteiro;
+Curso: um campo de texto contendo o curso atual do estudante;
+Matérias: um conjunto de textos contendo apenas os nomes das matérias que o estudante está cursando.
+
+const estudante = {
+  nome: "Adilson Josué de Freitas",
+  matricula: 201542290,
+  curso: "Engenharia eletrônica",
+  materias: [
+    "Cálculo 1",
+    "Álgebra Linear",
+    "Práticas de Laboratório",
+    "Metodologia",
+  ],
+};
+
+
+## 02 - Objetos em objetos
+
+## aninhado.js
+
+No vídeo anterior, vimos que conseguimos salvar um array dentro de um objeto. Nesta aula, vamos entender casos em que desejamos salvar um objeto dentro de outro objeto.
+
+Primeiro, copiaremos a variável de cliente do arquivo tipos.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+Logo após, criaremos um arquivo chamado "aninhados.js" na pasta aula2, clicando no primeiro ícone "New file". Desse modo, na pasta aula2, temos dois arquivos: tipos.js e aninhados.js.
+
+A palavra "aninhados" é justamente estar dentro do outro, podendo ser um código ou bloco aninhado.
+
+No arquivo aninhados.js, colaremos a variável cliente.
+
+aninhados.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+Vamos supor que no cenário da loja em que devemos atender um cliente, precisamos salvar qual o endereço dele. Isso caso seja necessário enviarmos um produto ou fatura.
+
+Sabemos que podemos criar propriedades para os objetos nomeando eles e atribuindo algum valor.
+
+Para isso, podemos adicionar uma propriedade cliente.endereco que vai receber um objeto com todos os campos, como rua, número, apartamento e complemento.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.endereco = {
+  rua: "R. Joseph Climber",
+  numero: 1337,
+  apartamento: true,
+  complemento: "ap 934",
+};
+
+Assim, temos um cliente que contém uma propriedade chamada endereço, que armazena um objeto.
+
+Logo após, podemos exibir esses valores usando o comando console log.
+
+aninhados.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.endereco = {
+  rua: "R. Joseph Climber",
+  numero: 1337,
+  apartamento: true,
+  complemento: "ap 934",
+};
+
+console.log(cliente);
+
+Podemos salvar o arquivo e voltar ao terminal para rodar o comando node.
+
+node aula2/aninhados.js
+{
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    endereco: {
+        rua: "R. Joseph Climber",
+        numero: 1337,
+        apartamento: true,
+        complemento: "ap 934",
+    }
+}
+
+Conseguimos visualizar os primeiros campos, que já existiam, como nome, idade, e-mail e telefone. Logo após, temos uma propriedade chamada endereco que dentro armazena outro objeto.
+
+Com isso, confirmamos que podemos guardar um objeto dentro de outro.
+
+Agora, vamos entender como acessar os campos dessa estrutura de forma individual. Solicitamos que fosse feito o console log somente de cliente, se desejamos visualizar o objeto de endereço podemos incluir .endereco.
+
+console.log(cliente.endereco);
+
+Salvaremos essa alteração e voltaremos ao terminal para executar o comando node novamente para verificarmos.
+
+{
+        rua: "R. Joseph Climber",
+        numero: 1337,
+        apartamento: true,
+        complemento: "ap 934",
+    }
+
+Perceba que exibiu somente o objeto endereco. A partir disso, todos os acessos que formos fazer, é igual quando fazemos o acesso a um objeto de forma direta. Não há segredo.
+
+Outro detalhe é que podemos usar a outra notação de colchetes para acessar.
+
+console.log(cliente["endereco"]);
+
+Podemos salvar e voltar ao terminal para executar o comando node aula2/aninhados.js. Note que retornou a mesma informação:
+
+{
+        rua: "R. Joseph Climber",
+        numero: 1337,
+        apartamento: true,
+        complemento: "ap 934",
+    }
+
+Após verificarmos isso, podemos voltar ao código e manter a notação de ponto.
+
+Assim como o cliente, o endereço pode ter várias propriedades, atributos ou campos próprios. O endereço em si, é uma unidade lógica que faz sentido dizermos que temos um endereço que possui essas propriedades.
+
+Logo, podemos usar os objetos para armazenar o formato dessas informações de uma maneira que faça sentido. Se comunicarmos que o cliente possui o número 1337, não fica claro. Mas se informamos que o cliente possui um endereço e que o número é 1337, sim.
+
+Como fazemos em casos que desejarmos organizar arrays e objetos dentro de um objeto?
+
+
+## 03 - Listas de objetos
+
+### listaObjetos.js
+
+Aprendemos que conseguimos armazenar um objeto dentro de outro em uma propriedade. Mas podemos querer ter uma lista com vários objetos.
+
+Assim como o telefone, em que guardamos mais de um para um mesmo cliente, pode ser que a pessoa tenha mais de um endereço. Desse modo, seria interessante termos uma lista com vários endereços. Porém, esse endereço é um objeto! Como fazemos isso?
+
+Voltando para o VSCode, criaremos uma cópia do arquivo aninhados.js, dentro da pasta aula2. Vamos renomear o arquivo aninhanos.copy.js para listaObjetos.js.
+
+listaObjetos.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.endereco = {
+  rua: "R. Joseph Climber",
+  numero: 1337,
+  apartamento: true,
+  complemento: "ap 934",
+};
+
+console.log(cliente.endereco);
+
+Ao invés de termos cliente.endereco teremos cliente.enderecos.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.enderecos = {
+  rua: "R. Joseph Climber",
+  numero: 1337,
+  apartamento: true,
+  complemento: "ap 934",
+};
+
+console.log(cliente.endereco);
+
+Para transformarmos em uma lista, incluiremos os colchetes fora do objeto. No console log vamos renomear para cliente.enderecos.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.enderecos = [
+  {
+    rua: "R. Joseph Climber",
+    numero: 1337,
+    apartamento: true,
+    complemento: "ap 934",
+  },
+];
+
+console.log(cliente.enderecos);
+
+Após realizar essas alterações, vamos ao terminal executar o comando node aula2/listaObjetos.js.
+
+node aula2/listaObjetos.js
+
+[
+  {
+    rua: 'R. Joseph Climber',
+    numero: 1337,
+    apartamento: true,
+    complemento: 'ap 934',
+  },
+]
+
+Nos devolveu um array, em que na primeira posição há um objeto, sendo o endereço que cadastramos. Porém, precisamos adicionar os outros endereços.
+
+Logo, após declararmos essa propriedade e antes de exibirmos, incluiremos como acessar o array usando o método push: cliente.enderecos.push().
+
+Dentro do parênteses, podemos passar como parâmetro o que desejamos inserir, no caso como temos um array de endereço, gostaríamos de incluir outro endereço. Representamos esse endereço como um objeto, por isso, colocamos as chaves "{}".
+
+//código omitido
+
+cliente.enderecos.push({
+
+})
+
+//código omitido
+
+Em cliente.enderecos.push, podemos descrever um novo endereço para o cliente, inserindo rua, número e apartamento.
+
+listaObjetos.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.enderecos = [
+  {
+    rua: "R. Joseph Climber",
+    numero: 1337,
+    apartamento: true,
+    complemento: "ap 934",
+  },
+];
+
+cliente.enderecos.push({
+  rua: "R. Joseph Ladder",
+  numero: 404,
+  apartamento: false,
+});
+
+console.log(cliente.enderecos);
+
+Desse modo, adicionamos uma nova entrada na lista, usando o método push.
+
+Para confirmar, salvamos o arquivo e voltamos ao terminal para executar o comando node aula2/listaObjetos.js.
+
+[
+  {
+    rua: 'R. Joseph Climber',
+    numero: 1337,
+    apartamento: true,
+    complemento: 'ap 934',
+  },
+    {rua: 'R. Joseph Ladder', numero: 404, apartamento: false}
+]
+
+Como retorno, temos dois objetos na primeira posição. O primeiro é o nosso endereço no número 1137 e agora com o número 404, na nova entrada.
+
+O que ganhamos ao fazer isso? Ganhamos todos os métodos que poderíamos usar com array, e podemos utilizar nesses objetos.
+
+Por exemplo, podemos acrescentar uma nova lista a partir dessa lista que geramos, usando um método do array chamado filter ("filtro"). Este seleciona alguns campos ou entradas de forma específica para colocar na lista.
+
+Para fazer essa chamada, vamos criar uma nova lista const listaApenasApartamentos. Nela, deixamos somente os endereços que são apartamentos do cliente.
+
+Logo, a variável listaApenasApartamentos vai receber cliente.endrecos.filter().
+
+//código omitido
+
+const listaApenasApartamentos = cliente.enderecos.filter(
+
+);
+
+Como parâmetro do filtro, passaremos uma função que selecionará o que está dentro do filtro ou não. O parâmetro de cada item é o (endereco) e no retorno "=>" desejamos saber se é um apartamento: (endereco) => endereco.apartamento === true.
+
+//código omitido
+
+const listaApenasApartamentos = cliente.enderecos.filter(
+  (endereco) => endereco.apartamento === true
+);
+
+Em seguida, faremos o console log em listaApenasApartamentos:
+
+//código omitido
+
+const listaApenasApartamentos = cliente.enderecos.filter(
+  (endereco) => endereco.apartamento === true
+);
+
+console.log(listaApenasApartamentos);
+
+Isso porque se endereco.apartamento for verdadeiro, será atribuído na nova lista listaApenasApartamentos. Podemos salvar e voltar ao terminal, para executar o comando node aula2/listaObjetos.js.
+
+[
+  {
+    rua: 'R. Joseph Climber',
+    numero: 1337,
+    apartamento: true,
+    complemento: 'ap 934',
+  }
+]
+
+Assim, temos como retorno a lista filtrada. Vamos supor que tenha muito mais endereços ou se fosse uma lista de objetos mais complexos, poderíamos usar esses métodos para montar relatórios.
+
+listaObjetos.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+cliente.enderecos = [
+  {
+    rua: "R. Joseph Climber",
+    numero: 1337,
+    apartamento: true,
+    complemento: "ap 934",
+  },
+];
+
+cliente.enderecos.push({
+  rua: "R. Joseph Ladder",
+  numero: 404,
+  apartamento: false,
+});
+
+const listaApenasApartamentos = cliente.enderecos.filter(
+  (endereco) => endereco.apartamento === true
+);
+
+console.log(listaApenasApartamentos);
+
+Neste vídeo, aprendemos como manipular uma lista de objetos da mesma forma que fazemos com as listas de valores primitivos, como string, números e boolean.
+
+Precisamos nos atentar ao método filter, já que ele nos retorna uma lista independente do número de entradas. Assim, mesmo tendo filtrado somente uma coisa, notamos que ele não nos devolveu o objeto endereço e sim uma lista com uma entrada do objeto endereço, e de um determinado objeto.
+
+Na próxima aula, vamos entender que além de adicionarmos arrays e objetos, podemos acrescentar funções no nosso objeto.
+
+
+## 04 - Funções
+
+### funcoes.js
+
+Entendemos que além de dados primitivos (boolean e string, por exemplo) podemos armazenar listas e outros objetos dentro do nosso objeto.
+
+Neste vídeo, vamos aprender que podemos guardar funções como propriedade de um objeto. Isso nos possibilita alterar o comportamento de um objeto e a deixar descrito junto com ele, como uma propriedade.
+
+Vamos supor que agora implementaremos uma parte do sistema de compra da loja. Deixaremos que o cliente efetue um pagamento.
+
+Para isso, no VSCode, no arquivo listaObjetos.js copiaremos o objeto cliente.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+Agora, à esquerda, criaremos um arquivo chamado "funcoes.js" em aula2.
+
+Desse modo, ficamos com as seguintes pastas:
+
+aula2
+aninhados.js
+funcoes.js
+listaObjetos.js
+tipos.js
+No arquivo funcoes.js, colaremos o objeto cliente.
+
+funcoes.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+};
+
+Para simplificar, vamos dizer que o esquema de funcionamento da loja quando a pessoa se torna cliente, ela efetua o cadastro e inicia com determinado saldo.
+
+Para isso, no objeto cliente incluiremos o campo saldo que inicia com duzentos reais.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    saldo: 200,
+};
+
+Mencionei que podemos ter propriedades que guardam funções, seria interessante descrevermos uma função que verifica se o cliente possui saldo suficiente para fazer uma compra.
+
+Isso porque caso contrário, teríamos que fazer essa verificação toda vez que efetuarmos um pagamento e, pode acontecer de errarmos ou fazermos essa verificação de forma inadequada.
+
+Por isso, criaremos uma propriedade chamada efetuaPagamento e o valor passado será uma função. Esta função terá o parâmetro valor, sendo o valor da conta que o cliente irá pagar, por exemplo.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    saldo: 200,
+    efetuaPagamento: function (valor) {
+
+    }
+};
+
+No bloco entre chaves "{}", vamos descrever o comportamento da nossa função. Iniciaremos esse comportamento com uma condicional if(), para verificar se o valor da compra foi maior que o saldo armazenado neste objeto.
+
+Para acessarmos o saldo do objeto, usaremos a palavra reservada this ("isso"). Esta palavra representa a instância do objeto atual em que estamos trabalhando, sendo o cliente João com idade de 24 anos. Para acessar o saldo desse cliente, usamos o this.saldo:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    saldo: 200,
+    efetuaPagamento: function (valor) {
+        if (valor > this.saldo) 
+    }
+};
+
+Agora que temos o saldo, se o valor for maior que o saldo atual, exibiremos a mensagem "Saldo insuficiente".
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    saldo: 200,
+    efetuaPagamento: function (valor) {
+        if (valor > this.saldo) {
+            console.log("Saldo insuficiente");
+        }
+    }
+};
+
+Teremos outro cenário, e para incluí-lo no código usaremos o else, em que a pessoa pode efetuar a compra.
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+    saldo: 200,
+    efetuaPagamento: function (valor) {
+        if (valor > this.saldo) {
+            console.log("Saldo insuficiente");
+        } else {
+
+        }
+    }
+};
+
+No bloco do else, vamos deduzir o valor da compra do saldo. Vamos dizer que this.saldo será menor e igual ("-=") - isto é, o saldo antigo menos o valor da compra.
+
+//código omitido
+
+else {
+this.saldo -= valor;
+}
+
+Logo após, vamos exibir uma mensagem informando que pagamento foi realizado, usaremos a template string.
+
+//código omitido
+
+else {
+this.saldo -= valor;
+console.log(`Pagamento realizado. Novo saldo: ${this.saldo}`);
+}
+
+Com isso, descrevemos o comportamento. Porém, precisamos chamar esse comportamento para ele ser executado. Por isso, no final do código incluiremos: cliente.efetuaPagamento(). No parênteses, colocaremos o número 250, pois é um valor acima de 200.
+
+funcoes.js:
+
+const cliente = {
+  nome: "Joao",
+  idade: 24,
+  email: "joao@firma.com",
+  telefone: ["1155555550", "1144444440"],
+  saldo: 200,
+  efetuaPagamento: function (valor) {
+    if (valor > this.saldo) {
+      console.log("Saldo insuficiente");
+    } else {
+      this.saldo -= valor;
+      console.log(`Pagamento realizado. Novo saldo: ${this.saldo}`);
+    }
+  },
+};
+
+cliente.efetuaPagamento(250);
+
+Após essas alterações, podemos voltar ao terminal e executar o comando node aula2/funcoes.js:
+
+Saldo insuficiente
+
+Obtivemos o retorno esperado, inserimos o valor 250 que é maior que 200 do saldo.
+
+Podemos voltar ao código no VSCode e alterar o valor de 250 para 25:
+
+cliente.efetuaPagamento(25);
+
+Novamente voltaremos ao terminal para rodar a instrução node aula2/funcoes.js:
+
+Pagamento realizado. Novo saldo: 175
+
+Conseguimos incluir um comportamento que já foi estabelecido no objeto, em uma propriedade. Vimos uma propriedade que armazena uma função e mais para frente no curso, daremos um nome para isso: método.
+
+Entenderemos o método em orientação a objetos, que chamamos de paradigma de orientação a objetos, como trabalhamos com métodos e propriedades e como criar objetos mais complexos.
+
+Mas, por enquanto, na próxima aula vamos aprender um pouco mais sobre os objetos, as formas de como podemos percorrer eles.
+
+
+
+### - Para saber mais: objeto literal e referência
+
+Vimos anteriormente como é a estrutura de um objeto, com seus pares de chave e valor:
+
+const objPersonagem = {
+ nome: "Gandalf",
+ classe: "mago",
+ nivel: "20"
+}
+
+O exemplo acima, assim como o que estamos criando durante esta aula, é o de um objeto literal.
+
+Um objeto literal é um objeto criado com a notação literal, ou seja: uma lista de chave e valores dentro de chaves{ }, que atribuímos a uma variável para que o valor possa ser acessado depois. Exatamente como no exemplo acima.
+
+Objetos literais funcionam bem quando queremos ter um objeto único com seus próprios dados. Isso porque um objeto literal sempre aponta para um mesmo local na memória, mesmo se você criar cópias dele. Vejamos o código a seguir:
+
+const objPersonagem = {
+ nome: "Gandalf",
+ classe: "mago",
+ nivel: "20"
+}
+
+const objPersonagem2 = objPersonagem
+
+Se alterarmos apenas o objPersonagem2, o resultado é:
+
+const objPersonagem2 = objPersonagem
+objPersonagem2.nome = "Gandalf, o Cinzento"
+
+console.log(objPersonagem.nome) //Gandalf, o Cinzento
+console.log(objPersonagem2.nome) //Gandalf, o Cinzento
+
+A variável objPersonagem2 não fez uma cópia do objeto original, apenas serviu como referência para o objeto original objPersonagem. Assim, qualquer alteração em qualquer um dos objetos altera ambos. Isso porque o JavaScript, quando trabalha com objetos, acessa os valores deles fazendo referência ao original. mas não cria uma cópia. Já o acesso por cópia funciona com tipos primitivos (string, number, booleano, null, symbol):
+
+let num = 50
+let num2 = num
+
+num2 = 100
+console.log(num) //50
+console.log(num2) //100
+
+Como podemos contornar esse comportamento quando criamos objetos? Além de utilizar a notação literal, objetos também podem ser criados através do método Object.create():
+
+const objPersonagem = {
+ nome: "Gandalf",
+ classe: "mago",
+ nivel: "20"
+}
+
+const objPersonagem2 = Object.create(objPersonagem)
+objPersonagem2.nome = "Gandalf, o Cinzento"
+
+console.log(objPersonagem.nome) //Gandalf
+console.log(objPersonagem2.nome) //Gandalf, o Cinzento
+
+O método Object.create() cria um novo objeto utilizando como protótipo o objeto passado via parâmetro. Dessa forma, objPersonagem2 é uma instância diferente de objPersonagem e pode ser trabalhada de forma independente.
+
+Você pode ver mais exemplos desse método na documentação do MDN.
+-> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+Nas próximas aulas veremos também outra forma de criar objetos ao utilizar funções construtoras.
+
+
+
+### - Manipulando onjetos
+
+Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dados, desde primitivos (string, number, bool) até tipos mais elaborados como arrays ou outros objetos. Observe o código abaixo:
+
+const cliente = {
+ nome: "Jose",
+ idade:33,
+ email: "jose@email.com",
+ telefones: ["+550033338888", "+550033334444"]
+}
+ cliente.animalEstimacao = [{
+ nome: "Kripto",
+ raça: "Cão",
+ vacinado: true
+}]
+ cliente.animalEstimacao.push({
+ nome: "Lex",
+ raça: "Gato",
+ vacinado: false
+})
+
+Na representação do cliente, o objeto é composto por outras propriedades de diversos tipos e objetos.
+
+O cliente possui uma propriedade chamada animalEstimacao, um array de objetos, o que nos permite usar funções comuns a arrays como filter().
+-> Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
+
+
+
+### - O que aprendemos
+
+Nessa aula, você aprendeu:
+Que para manipular objetos literais podemos utilizar os métodos do JavaScript para cada tipo de dado;
+Que os valores em um objeto podem ser tipos primitivos (strings, números, booleanos e null), arrays ou outros objetos;
+Que além das propriedades, também podemos atribuir funções que dão comportamento a um objeto.
+
+
+
+## Aula 03 - Percorrendo objetos
+
+### for...in
+
+### repeticao.js
