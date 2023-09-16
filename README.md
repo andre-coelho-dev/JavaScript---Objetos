@@ -14,7 +14,6 @@ Será aberto o arquivo objeto.js vazio. Nele, faremos um exemplo com as informa�
 Vamos supor que temos uma lista com diversos CPFs ou alguma outra informação repetida, ou um tipo simples do dado. Chamaremos uma listaCPFs declarando a como uma const, e usaremos os colchetes "[]", para listar os valores.
 
     objeto.js
-.
 
     const listaCPFs = [1111111, 22222, 3333];
 
@@ -22,17 +21,14 @@ Uma lista de CPFs é uma estrutura de dados que armazena a mesma informação v�
 Mas se usarmos essa mesma estrutura para guardar outro dado, por exemplo, sobre uma pessoa? Vamos criar uma const informacoesPessoa com os valores que desejamos saber sobre a pessoa.
 
     const listaCPFs = [1111111, 22222, 3333];
-.
 
     const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
 
 Com isso, temos valores que se tivéssemos mais de uma pessoa estariam repetindo. Vamos supor que temos mais uma pessoas:
 
     const listaCPFs = [1111111, 22222, 3333];
-.
     
     const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
-.
     
     const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
 
@@ -40,10 +36,8 @@ Observe que todos os campos estariam sendo repetidos: nome, idade e CPF. E não 
 Para isso, usaremos o console.log(), para visualizar o nome dessa pessoa. Pegaremos essa informação de informacoesPessoa, no índice 1, isso porque o nome é no índice 0 e o valor no índice 1.
 
     const listaCPFs = [1111111, 22222, 3333];
-.
 
     const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
-.
 
     console.log(informacoesPessoa[1]);
 
@@ -68,13 +62,10 @@ Como declaramos as propriedades em um objeto? Escrevemos a propriedade, o nome, 
 Cada propriedade é separada por vírgula e quebramos a linha para ficar como se fosse uma lista, com uma propriedade e seu respectivo valor, um abaixo do outro, de cima para baixo.
 
     const listaCPFs = [1111111, 22222, 3333];
-.
 
     const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
-.
 
     console.log(informacoesPessoa[1]);
-.
 
     const objetoPessoa = {
       idade: 32,
@@ -99,7 +90,6 @@ No arquivo criado, vamos imaginar um trecho simplificado de uma aplicação que 
 Iniciaremos o código com const cliente que vai receber as propriedades do objeto.
 
     acesso-ponto.js
-.
 
     const cliente = {
 
@@ -122,14 +112,12 @@ Digamos que no projeto desejamos acessar qual o nome desse cliente e escrever um
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(cliente)
 
 Após inserir essa linha no código, abriremos o terminal e chamaremos o node para executar esse código.
 
     acesso-ponto.js
-.
 
     {
       nome: "Andre",
@@ -161,14 +149,12 @@ São os dados separados do cliente, clicaremos em "nome".
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(cliente.nome)
 
 Salvaremos novamente o arquivo, clicando em "Ctrl + S" e voltaremos ao terminal, para executar o mesmo comando que rodamos anteriormente.
 
     acesso-ponto.js
-.
 
     Andre
 
@@ -184,7 +170,6 @@ Dentro dessas crases, vamos inserir a mensagem que desejamos exibir:
 Lembrando que ${} é a marcação de um valor que será lido. De novo, salvaremos o arquivo e voltaremos ao terminal para executar o comando node.
 
     acesso-ponto.js
-.
 
     O nome do cliente é Andre e essa pessoa tem 32 anos.
 
@@ -210,19 +195,16 @@ Código completo do arquivo acesso_ponto.js:
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(
       `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
     );
-.
 
     console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
 
 Após inserirmos esse console.log, voltaremos ao terminal e rodaremos novamente o comando node.
 
     acesso-ponto.js
-.
 
     O nome do cliente é Andre e essa pessoa tem 32 anos.
 
@@ -249,7 +231,6 @@ Com isso, ficamos os as seguintes pastas até o momento:
  No arquivo acesso_colchete.js, colaremos o código que copiamos anteriormente.
 
     acesso_colchete.js
-.
 
     const cliente = {
       nome: "Andre",
@@ -257,12 +238,10 @@ Com isso, ficamos os as seguintes pastas até o momento:
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(
       `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
     );
-.
 
     console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
 
@@ -277,12 +256,10 @@ No template string do primeiro console.log, podemos acessar o nome usando os col
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(
       `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
     );
-.
 
     console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
 
@@ -309,7 +286,6 @@ Assim, ficamos com o arquivo acesso_colchete.js da seguinte forma até o momento
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(
       `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
@@ -338,7 +314,6 @@ Por estarmos assumindo que não sabemos os nomes das chaves, usamos o operador d
 Ou seja, o valor da chave é uma string, e uma string dentro de colchetes depois de um objeto, nos permite acessar determinada propriedade.
 
     acesso-colchete.js
-.
 
     const cliente = {
       nome: "Andre",
@@ -346,15 +321,12 @@ Ou seja, o valor da chave é uma string, e uma string dentro de colchetes depois
       cpf: "1122233345",
       email: "andre@dominio.com",
     };
-.
 
     console.log(
       `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
     );
-.
 
     const chaves = ["nome", "idade", "cpf", "email"];
-.
 
     chaves.forEach((chave) => {
       console.log(`A chave ${chave} tem valor ${cliente[chave]}`);
@@ -411,10 +383,12 @@ No JavaScript, vimos que objetos são estruturas de dados compostas por chave e 
     };
 
 Ao tentar acessar pet.dataDeNascimento iremos obter a string ”12/03/2017”.
-** -> Podemos usar o operador . para acessar as propriedades que já conhecemos de um objeto.
+
+#### -> Podemos usar o operador . para acessar as propriedades que já conhecemos de um objeto.
 
 Ao tentar acessar pet[“brinquedoFavorito”] iremos obter a string ”bolinha”.
-** -> Podemos utilizar o nome da propriedade como string dentro de colchetes [“propriedade”] para acessar as propriedades de um objeto de forma mais dinâmica.
+
+#### -> Podemos utilizar o nome da propriedade como string dentro de colchetes [“propriedade”] para acessar as propriedades de um objeto de forma mais dinâmica.
 
 
 ### Adicionando e alterando
@@ -426,7 +400,6 @@ No VSCode, clicaremos no ícone "New File" ("Novo arquivo"), para criar um novo 
 Dentro do arquivo criado, inserimos um novo objeto const pessoa e atribuímos usando o sinal de igual "=" bloco de chaves. Nele, teremos o nosso objeto.
 
     alterar.js
-.
 
     const pessoa = {
 
@@ -472,7 +445,6 @@ Vamos fazer mais algumas inclusões para analisarmos. E se colocarmos pessoa.tel
 Logo após, podemos exibir essa informação usando console log.
 
     pessoa.telefone = "11 2223333444";
-.
 
     console.log(pessoa.telefone);
 
@@ -482,16 +454,12 @@ Código do arquivo alterar.js completo até o momento:
       nome: "Luma",
       profissao: "Engenheira",
     };
-.
 
     console.log(pessoa.nome);
-.
 
     console.log(pessoa.telefone);
-.
 
     pessoa.telefone = "11 2223333444";
-.
 
     console.log(pessoa.telefone);
 
@@ -529,28 +497,21 @@ O Javascript nos permite alterar, adicionar e remover campos, para manipularmos 
 Se você estiver atento(a), talvez já tenha suspeitado de algo neste código que escrevemos juntos.
 
     alterar.js
-.
 
     const pessoa = {
       nome: "Luma",
       profissao: "Engenheira",
     };
-.
 
     console.log(pessoa.nome);
-.
 
     console.log(pessoa.telefone);
-.
 
     pessoa.telefone = "11 2223333444";
-.
 
     console.log(pessoa.telefone);
-.
 
     pessoa.nome = "Luma Silva";
-.
 
     console.log(pessoa);
 
@@ -561,7 +522,6 @@ Nele, incluiremos um nome "Pedro" e depois tentaremos fazer com que pessoa receb
     const novaPessoa = {
       nome: "Pedro",
     };
-.
 
     pessoa = novaPessoa;
 
@@ -571,30 +531,22 @@ Após essa alteração, o arquivo alterar.js deve ficar da seguinte forma:
       nome: "Luma",
       profissao: "Engenheira",
     };
-.
 
     console.log(pessoa.nome);
-.
 
     console.log(pessoa.telefone);
-.
 
     pessoa.telefone = "11 2223333444";
-.
 
     console.log(pessoa.telefone);
-.
 
     pessoa.nome = "Luma Silva";
-.
 
     console.log(pessoa);
-.
 
     const novaPessoa = {
       nome: "Pedro",
     };
-.
 
     pessoa = novaPessoa;
 
@@ -609,9 +561,10 @@ Por enquanto, esse conhecimento é satisfatório para seguirmos com o curso. Nes
 
 ### Para saber mais: tipos de variáveis e objetos
 
-No último vídeo, vimos que podemos alterar e manipular as propriedades de um objeto mesmo quando o objeto está armazenado em uma variável do tipo const.
+Na última aula, vimos que podemos alterar e manipular as propriedades de um objeto mesmo quando o objeto está armazenado em uma variável do tipo const.
 Temos um artigo na plataforma que explica as diferenças entre as variáveis que podemos declarar, mas vale lembrar que as variáveis do tipo const apenas não podem ser reatribuidas, mas podem ter seu conteúdo interno alterado.
-** ->https://www.alura.com.br/artigos/entenda-diferenca-entre-var-let-e-const-no-javascript?_gl=1*4a2um6*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDExMzg3MC4xNC4xLjE2OTQxMTU4NDEuMC4wLjA.*_fplc*VFhUem41UndVNFFQRzN2TjB3RWp3dnpwTGdyUGx5WkE1RTJDYlB1VkdXQmg4SDB4Z1NXenNhT2tUNUslMkJiUTZFWDFGZURHVDhqRUQzZDlPNDM2QlFlWGRIWnEzNUEybnE1M3kyRSUyQm8xbjVRQ3NIcjk4Zzh4bTklMkYlMkJETUg2bnclM0QlM0Q.
+
+#### ->https://www.alura.com.br/artigos/entenda-diferenca-entre-var-let-e-const-no-javascript?_gl=1*4a2um6*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDExMzg3MC4xNC4xLjE2OTQxMTU4NDEuMC4wLjA.*_fplc*VFhUem41UndVNFFQRzN2TjB3RWp3dnpwTGdyUGx5WkE1RTJDYlB1VkdXQmg4SDB4Z1NXenNhT2tUNUslMkJiUTZFWDFGZURHVDhqRUQzZDlPNDM2QlFlWGRIWnEzNUEybnE1M3kyRSUyQm8xbjVRQ3NIcjk4Zzh4bTklMkYlMkJETUg2bnclM0QlM0Q.
 
 
 ### Para saber mais: como deletar uma propriedade?
@@ -633,20 +586,16 @@ Vamos considerar o objeto abaixo:
 Se quisermos, por exemplo, remover a propriedade aliado, podemos utilizar o operador delete:
 
     delete objPersonagem.aliado
-.
 
     console.log(objPersonagem.aliado) //undefined
 
 Também é possível utilizar a notação de colchetes:
 
     delete objPersonagem.aliado
-.
 
     delete objPersonagem["status"]
-.
 
     console.log(objPersonagem.aliado) //undefined
-.
 
     console.log(objPersonagem.status) //undefined
 
@@ -662,13 +611,10 @@ Após remover as duas propriedades acima, o objeto agora está desta forma:
 O valor de retorno do operador delete é um booleano, ou seja, retorna sempre true ou false para cada operação. Porém, é importante notar que ele não retorna false se tentarmos remover, por exemplo, uma propriedade que não existe no objeto:
 
     const delProp = delete objPersonagem.aliado
-.
 
     const delPropInexistente = delete objPersonagem["endereco"]
-.
 
     console.log(delProp) //true
-.
 
     console.log(delPropInexistente) //true
 
@@ -690,7 +636,8 @@ Considere o seguinte código:
 Usando a representação do objeto pessoa, foi solicitado que adicionássemos os campos seguro social e cpf no formato string. Além disso, quando forem exibidas as informações da pessoa em um relatório, deverão aparecer somente os 4 primeiros dígitos do CPF e da carteira de identidade.
 
 Para adicionar as novas propriedades precisamos somente informar o novo campo e o seu valor, ou seja,pessoa.cpf="15346626522-65" e pessoa.seguroSocial="854321985-9" .Para exibir os 4 primeiros dígitos da identidade e CPF, podemos chamar uma função de string chamada substring() e passar início e o fim da string que queremos como pessoa.cpf.substring(0,4).
-** -> Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
+
+#### -> Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
 
 
 ### Faça como eu fiz: criando objetos
@@ -700,12 +647,11 @@ Nesta aula, começamos a aprender sobre a estrutura de dados chamada de objetos 
 
 ### O que aprendemos?
 
-** Nessa aula, você aprendeu:
+Nessa aula, você aprendeu:
 Que objeto é um tipo de dado que reflete uma abstração dos objetos da vida real;
 Que a estrutura de um objeto literal no JavaScript é composta por pares de chave: valor separados por vírgula, dentro de chaves { };
 Que para acessar dados em um objeto podemos usar as notações de ponto e de colchete;
 Que para adicionar e manipular dados em um objeto precisamos saber como acessar suas propriedades.
-
 
 
 ## Aula - 02: Manipulação de objetos
@@ -720,7 +666,6 @@ Agora, selecionando a pasta aula2, selecionaremos o primeiro ícone "New file" p
 Vamos criar a const cliente, que vai armazenar um objeto.
 
     tipos.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -733,7 +678,6 @@ Por enquanto, nada de novo para nós. Mas podemos armazenar algumas estruturas m
 Por exemplo, em casos em que o usuário possui mais de um telefone. Desse modo, podemos incluir mais uma linha com um telefone2.
 
     tipos.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -761,14 +705,12 @@ Com isso, temos um array em que podemos guardar todos os números de telefones d
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     console.log(cliente);
 
 Salvaremos este código e abriremos o terminal para executar o comando:
 
     tipos.js
-.
 
     {
       nome: "Joao",
@@ -787,7 +729,7 @@ Dessa forma, vamos acessar somente o array que contém os telefones. Podemos sal
     ["1155555550", "1144444440"]
 
 Note que nos devolveu somente o array com os telefones. Este array está guardado em uma propriedade de um objeto.
-Assim, conseguimos armazenar um array, e conseguimos estipular como seriam as operações e o que poderíamos fazer. Mas e se desejarmos guardar outro objeto
+Assim, conseguimos armazenar um array, e conseguimos estipular como seriam as operações e o que poderíamos fazer. Mas e se desejarmos guardar outro objeto.
 
 
 ### Selecione os tipos mais adequados
@@ -830,7 +772,6 @@ A palavra "aninhados" é justamente estar dentro do outro, podendo ser um códig
 No arquivo aninhados.js, colaremos a variável cliente.
 
     aninhados.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -849,7 +790,6 @@ Para isso, podemos adicionar uma propriedade cliente.endereco que vai receber um
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.endereco = {
       rua: "R. Joseph Climber",
@@ -862,7 +802,6 @@ Assim, temos um cliente que contém uma propriedade chamada endereço, que armaz
 Logo após, podemos exibir esses valores usando o comando console log.
 
     aninhados.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -870,7 +809,6 @@ Logo após, podemos exibir esses valores usando o comando console log.
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.endereco = {
       rua: "R. Joseph Climber",
@@ -878,14 +816,12 @@ Logo após, podemos exibir esses valores usando o comando console log.
       apartamento: true,
       complemento: "ap 934",
     };
-.
 
     console.log(cliente);
 
 Podemos salvar o arquivo e voltar ao terminal para rodar o comando node.
 
     aninhados.js
-.
 
     {
       nome: "Joao",
@@ -944,7 +880,6 @@ Assim como o telefone, em que guardamos mais de um para um mesmo cliente, pode s
 Voltando para o VSCode, criaremos uma cópia do arquivo aninhados.js, dentro da pasta aula2. Vamos renomear o arquivo aninhanos.copy.js para listaObjetos.js.
 
     listaObjetos.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -952,7 +887,6 @@ Voltando para o VSCode, criaremos uma cópia do arquivo aninhados.js, dentro da 
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.endereco = {
       rua: "R. Joseph Climber",
@@ -960,7 +894,6 @@ Voltando para o VSCode, criaremos uma cópia do arquivo aninhados.js, dentro da 
       apartamento: true,
       complemento: "ap 934",
     };
-.
 
     console.log(cliente.endereco);
 
@@ -972,7 +905,6 @@ Ao invés de termos cliente.endereco teremos cliente.enderecos.
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = {
       rua: "R. Joseph Climber",
@@ -980,7 +912,6 @@ Ao invés de termos cliente.endereco teremos cliente.enderecos.
       apartamento: true,
       complemento: "ap 934",
     };
-.
 
     console.log(cliente.endereco);
 
@@ -992,7 +923,6 @@ Para transformarmos em uma lista, incluiremos os colchetes fora do objeto. No co
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1002,14 +932,12 @@ Para transformarmos em uma lista, incluiremos os colchetes fora do objeto. No co
         complemento: "ap 934",
       },
     ];
-.
 
     console.log(cliente.enderecos);
 
 Após realizar essas alterações, vamos ao terminal executar o comando node aula2/listaObjetos.js.
 
     listaObjetos.js
-.
 
     [
       {
@@ -1031,7 +959,6 @@ Dentro do parênteses, podemos passar como parâmetro o que desejamos inserir, n
 Em cliente.enderecos.push, podemos descrever um novo endereço para o cliente, inserindo rua, número e apartamento.
 
     listaObjetos.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1039,7 +966,6 @@ Em cliente.enderecos.push, podemos descrever um novo endereço para o cliente, i
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1049,14 +975,12 @@ Em cliente.enderecos.push, podemos descrever um novo endereço para o cliente, i
         complemento: "ap 934",
       },
     ];
-.
 
     cliente.enderecos.push({
       rua: "R. Joseph Ladder",
       numero: 404,
       apartamento: false,
     });
-.
 
     console.log(cliente.enderecos);
 
@@ -1111,7 +1035,6 @@ Isso porque se endereco.apartamento for verdadeiro, será atribuído na nova lis
 Assim, temos como retorno a lista filtrada. Vamos supor que tenha muito mais endereços ou se fosse uma lista de objetos mais complexos, poderíamos usar esses métodos para montar relatórios.
 
     listaObjetos.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1119,7 +1042,6 @@ Assim, temos como retorno a lista filtrada. Vamos supor que tenha muito mais end
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1129,25 +1051,23 @@ Assim, temos como retorno a lista filtrada. Vamos supor que tenha muito mais end
         complemento: "ap 934",
       },
     ];
-.
 
     cliente.enderecos.push({
       rua: "R. Joseph Ladder",
       numero: 404,
       apartamento: false,
     });
-.
 
     const listaApenasApartamentos = cliente.enderecos.filter(
       (endereco) => endereco.apartamento === true
     );
-.
 
     console.log(listaApenasApartamentos);
 
 Nesta aula, aprendemos como manipular uma lista de objetos da mesma forma que fazemos com as listas de valores primitivos, como string, números e boolean.
 Precisamos nos atentar ao método filter, já que ele nos retorna uma lista independente do número de entradas. Assim, mesmo tendo filtrado somente uma coisa, notamos que ele não nos devolveu o objeto endereço e sim uma lista com uma entrada do objeto endereço, e de um determinado objeto.
 Na próxima aula, vamos entender que além de adicionarmos arrays e objetos, podemos acrescentar funções no nosso objeto.
+
 
 ### Funções
 
@@ -1177,7 +1097,6 @@ tipos.js
 No arquivo funcoes.js, colaremos o objeto cliente.
 
     funcoes.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1274,7 +1193,6 @@ Logo após, vamos exibir uma mensagem informando que pagamento foi realizado, us
 Com isso, descrevemos o comportamento. Porém, precisamos chamar esse comportamento para ele ser executado. Por isso, no final do código incluiremos: cliente.efetuaPagamento(). No parênteses, colocaremos o número 250, pois é um valor acima de 200.
 
     funcoes.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1291,7 +1209,6 @@ Com isso, descrevemos o comportamento. Porém, precisamos chamar esse comportame
         }
       },
     };
-.
 
     cliente.efetuaPagamento(250);
 
@@ -1316,6 +1233,7 @@ Conseguimos incluir um comportamento que já foi estabelecido no objeto, em uma 
 Entenderemos o método em orientação a objetos, que chamamos de paradigma de orientação a objetos, como trabalhamos com métodos e propriedades e como criar objetos mais complexos.
 Mas, por enquanto, na próxima aula vamos aprender um pouco mais sobre os objetos, as formas de como podemos percorrer eles.
 
+
 ### Para saber mais: objeto literal e referência
 
 Vimos anteriormente como é a estrutura de um objeto, com seus pares de chave e valor:
@@ -1335,36 +1253,28 @@ Objetos literais funcionam bem quando queremos ter um objeto único com seus pr�
     classe: "mago",
     nivel: "20"
     }
-.
 
     const objPersonagem2 = objPersonagem
 
 Se alterarmos apenas o objPersonagem2, o resultado é:
 
     const objPersonagem2 = objPersonagem
-.
 
     objPersonagem2.nome = "Gandalf, o Cinzento"
-.
 
     console.log(objPersonagem.nome) //Gandalf, o Cinzento
-.
 
     console.log(objPersonagem2.nome) //Gandalf, o Cinzento
 
 A variável objPersonagem2 não fez uma cópia do objeto original, apenas serviu como referência para o objeto original objPersonagem. Assim, qualquer alteração em qualquer um dos objetos altera ambos. Isso porque o JavaScript, quando trabalha com objetos, acessa os valores deles fazendo referência ao original. mas não cria uma cópia. Já o acesso por cópia funciona com tipos primitivos (string, number, booleano, null, symbol):
 
     let num = 50
-.
 
     let num2 = num
-.
 
     num2 = 100
-.
 
     console.log(num) //50
-.
 
     console.log(num2) //100
 
@@ -1375,26 +1285,24 @@ Como podemos contornar esse comportamento quando criamos objetos? Além de utili
     classe: "mago",
     nivel: "20"
     }
-.
 
     const objPersonagem2 = Object.create(objPersonagem)
-.
 
     objPersonagem2.nome = "Gandalf, o Cinzento"
-.
 
     console.log(objPersonagem.nome) //Gandalf
-.
 
     console.log(objPersonagem2.nome) //Gandalf, o Cinzento
 
 O método Object.create() cria um novo objeto utilizando como protótipo o objeto passado via parâmetro. Dessa forma, objPersonagem2 é uma instância diferente de objPersonagem e pode ser trabalhada de forma independente.
 Você pode ver mais exemplos desse método na documentação do MDN.
-** -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+#### -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 
 Nas próximas aulas veremos também outra forma de criar objetos ao utilizar funções construtoras.
 
-### Manipulando onjetos
+
+### Manipulando objetos
 
 Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dados, desde primitivos (string, number, bool) até tipos mais elaborados como arrays ou outros objetos. Observe o código abaixo:
 
@@ -1419,7 +1327,9 @@ Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dad
 
 Na representação do cliente, o objeto é composto por outras propriedades de diversos tipos e objetos.
 O cliente possui uma propriedade chamada animalEstimacao, um array de objetos, o que nos permite usar funções comuns a arrays como filter().
-** -> Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
+
+#### -> Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
+
 
 ### O que aprendemos
 
@@ -1427,7 +1337,6 @@ Nessa aula, você aprendeu:
 Que para manipular objetos literais podemos utilizar os métodos do JavaScript para cada tipo de dado;
 Que os valores em um objeto podem ser tipos primitivos (strings, números, booleanos e null), arrays ou outros objetos;
 Que além das propriedades, também podemos atribuir funções que dão comportamento a um objeto.
-
 
 
 ## Aula - 03: Percorrendo objetos
@@ -1441,7 +1350,6 @@ No VSCode, criaremos na raiz do projeto uma pasta chamada aula3, clicando no seg
 Agora, copiaremos a parte do código do cliente com o endereço do arquivo listaObjetos, da pasta aula2 e colaremos no arquivo repeticao.js.
 
     repeticao.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1449,7 +1357,6 @@ Agora, copiaremos a parte do código do cliente com o endereço do arquivo lista
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1477,7 +1384,6 @@ Agora, podemos mostrar o que está sendo salvo dentro desse valor. Por isso, apl
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1487,7 +1393,6 @@ Agora, podemos mostrar o que está sendo salvo dentro desse valor. Por isso, apl
         complemento: "ap 934",
       },
     ];
-.
 
     for (let chave in cliente) {
         console.log(chave);
@@ -1548,7 +1453,6 @@ Para incluir um filtro, checamos o tipo do objeto. Para isso, criaremos uma vari
 
     for (let chave in cliente) {
         let tipo = typeof cliente[chave];
-.
 
         console.log(`A chave ${chave} tem o valor ${cliente[chave]}`);
     }
@@ -1573,6 +1477,7 @@ Nos devolveu somente o que não era objeto: nome, idade e e-mail.
 Lembrando que o typeof de um array retorna um objeto, e poderíamos adicionar outro tratamento para chamar novamente dentro do objeto endereço e ler os campos ou tratar os arrays, checar se é um array e criar outro método para isso.
 Mas para o nosso entendimento, isso que fizemos é satisfatório. Conseguimos compreender como o for...in pega as propriedades e como podemos manipulá-las, fazer validações e entender como funciona esse tipo de laço de repetição.
 
+
 ### Percorrendo objetos
 
 Nas aulas anteriores aprendemos que o JavaScript traz uma série de métodos próprios que nos ajudam a trabalhar com objetos. Um exemplo disso é o método for … In que permite a iteração sobre as propriedades de um objeto como em um array. Sabendo disso, observe o código que define um objeto do tipo paciente:
@@ -1596,7 +1501,6 @@ Nas aulas anteriores aprendemos que o JavaScript traz uma série de métodos pr�
 Posso utilizar o método for..In como loop e exibir somente as propriedades do objeto que não são classificadas como objetos ou funções, como no código abaixo:
 
     let dados = "";
-.
 
     for (let info in paciente) {
     if (typeof paciente[info] === "object" || typeof paciente[info] === "function") {
@@ -1606,7 +1510,7 @@ Posso utilizar o método for..In como loop e exibir somente as propriedades do o
       `}
     };
 
-** -> O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, uma delas é usar o typeof e verificar o tipo da propriedade.
+#### -> O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, uma delas é usar o typeof e verificar o tipo da propriedade.
 
 Para a execução do código:
 
@@ -1615,7 +1519,9 @@ Para a execução do código:
     };
 
 A saída esperada é a listagem do nome das propriedades do objeto paciente.
-** -> O loop definido no for...in irá retornar para a variável info que é o nome da chave do objeto, ou seja, o nome da propriedade do objeto.
+
+#### -> O loop definido no for...in irá retornar para a variável info que é o nome da chave do objeto, ou seja, o nome da propriedade do objeto.
+
 
 ### Métodos de objeto
 
@@ -1629,7 +1535,6 @@ Parte para copiar do arquivo repeticao.js:
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1645,10 +1550,10 @@ Logo após, à esquerda, criaremos um arquivo chamado chaves.js dentro da pasta 
 aula3
 chaves.js
 repeticao.js
+
 No arquivo chaves.js, colaremos o trecho do código que copiamos anteriormente.
 
     chaves.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1656,7 +1561,6 @@ No arquivo chaves.js, colaremos o trecho do código que copiamos anteriormente.
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1676,7 +1580,6 @@ Criaremos uma const chavesDoObjeto, depois usaremos uma classe que é um conjunt
 Essa função nos retorna um array, que contém todas as chaves já inicializadas do cliente. Para visualizar as chaves do objeto, incluiremos o console log.
 
     const chavesDoObjeto = Object.keys(cliente);
-.
 
     console.log(chavesDoObjeto);
 
@@ -1714,7 +1617,6 @@ Código completo do arquivochaves.js:
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1724,13 +1626,10 @@ Código completo do arquivochaves.js:
         complemento: "ap 934",
       },
     ];
-.
 
     const chavesDoObjeto = Object.keys(cliente);
-.
 
     console.log(chavesDoObjeto);
-.
 
     if (!chavesDoObjeto.includes("enderecos")) {
       console.error("Erro. É necessário ter um endereço cadastrado.");
@@ -1743,7 +1642,6 @@ Podemos salvar clicando em "Ctrl + S" e voltar ao terminal para executar o coman
 Após confirmar que deu certo, podemos voltar ao código e comentar a parte que adicionamos o endereço:
 
     chaves.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1751,7 +1649,6 @@ Após confirmar que deu certo, podemos voltar ao código e comentar a parte que 
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     // cliente.enderecos = [
     //  {
@@ -1761,13 +1658,10 @@ Após confirmar que deu certo, podemos voltar ao código e comentar a parte que 
     //    complemento: "ap 934",
     //  },
     //];
-.
 
     const chavesDoObjeto = Object.keys(cliente);
-.
 
     console.log(chavesDoObjeto);
-.
 
     if (!chavesDoObjeto.includes("enderecos")) {
       console.error("Erro. É necessário ter um endereço cadastrado.");
@@ -1782,13 +1676,15 @@ Agora, sim, obtivemos um erro. O que é esperado, afinal, comentamos a parte que
 Com isso, aprendemos que podemos obter utilizando o object.keys() um array com todas as chaves do objeto.
 Além do método keys, a classe nos fornece vários outros métodos que deixaremos em um material extra para você entender melhor.
 
+
 ### Para saber mais: outros métodos de objetos
 
 Para aprofundar seus conhecimentos, que tal conhecer o funcionamento dos objetos em JavaScript?
 Acesse a documentação do MDN, que é uma ótima referência aos nossos estudos e amplie os conhecimentos dos métodos e práticas que realizamos até agora.
 Sabemos que o ecossistema JavaScript é bem vasto e sofre diversas mudanças em função do tempo, então vale a pena dedicarmos um tempo para olhar a documentação e dar uma lida com calma.
 
-** -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_Objects
+#### -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_Objects
+
 
 ### Sintaxe de espalhamento
 
@@ -1803,7 +1699,6 @@ Voltando ao VSCode, podemos remover o comentário do arquivo chaves.js:
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1813,13 +1708,10 @@ Voltando ao VSCode, podemos remover o comentário do arquivo chaves.js:
         complemento: "ap 934",
       },
     ];
-.
 
     const chavesDoObjeto = Object.keys(cliente);
-.
 
     console.log(chavesDoObjeto);
-.
 
     if (!chavesDoObjeto.includes("enderecos")) {
       console.error("Erro. É necessário ter um endereço cadastrado.");
@@ -1833,7 +1725,6 @@ E novamente, copiaremos o cliente com o respectivo endereço:
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1851,10 +1742,10 @@ aula3
 chaves.js
 espalhamento.js
 repeticao.js
+
 No arquivo espalhamento.js, colaremos o trecho do código que copiamos do arquivo chaves.js.
 
     espalhamento.js
-.
 
     const cliente = {
       nome: "Joao",
@@ -1862,7 +1753,6 @@ No arquivo espalhamento.js, colaremos o trecho do código que copiamos do arquiv
       email: "joao@firma.com",
       telefone: ["1155555550", "1144444440"],
     };
-.
 
     cliente.enderecos = [
       {
@@ -1894,7 +1784,6 @@ Chamaremos ligaParaCliente passando como parâmetro cliente.telefone com o índi
       console.log(`Ligando para ${telefoneComercial}`);
       console.log(`Ligando para ${telefoneResidencial}`);
     }
-.
 
     ligaParaCliente(cliente.telefone[0], cliente.telefone[1]);
 
@@ -1918,7 +1807,6 @@ Obtivemos o mesmo retorno que anteriormente, ela espalhou o array no momento da 
 Será que conseguimos fazer algo parecido com objetos? Vamos supor que precisamos realizar um envio de algum produto para o cliente. Para testar isso, no final do arquivo espalhamento.js, criaremos uma const encomenda que será igual a um objeto, = {}.
 
     espalhamento.js
-.
 
     const encomenda = {
 
@@ -1937,7 +1825,6 @@ Para visualizarmos esse objeto, colocaremos um console log passando como parâme
       destinatario: cliente.nome,
       endereco: cliente.enderecos[0],
     };
-.
 
     console.log(encomenda);
 
@@ -1964,7 +1851,6 @@ No VSCode, nós poderíamos passar os campos de forma mais bruta, passando os ca
         rua: cliente.enderecos[0].rua,
         numero:cliente.enderecos[1].numero,
     };
-.
 
     console.log(encomenda);
 
@@ -1982,7 +1868,6 @@ Vamos dizer que queremos espalhar o que está dentro do objeto de endereço. Par
       destinatario: cliente.nome,
       ...cliente.enderecos[0],
     };
-.
 
     console.log(encomenda);
 
@@ -2001,6 +1886,7 @@ Salvaremos o arquivo mais uma vez e vamos voltar ao terminal para rodar o comand
 
 Assim, temos somente um objeto, que contém os campos destinatário, rua, número, apartamento e complemento.
 
+
 ### Para saber mais: spread operator
 
 No aula anterior vimos um exemplo de uso do spread operator, também conhecido como sintaxe de espalhamento ou operador de espalhamento. Este operador copia as propriedades de objetos para outros, “espalhando” os conteúdos. Para entender melhor, vamos ver mais alguns exemplos:
@@ -2009,7 +1895,6 @@ No aula anterior vimos um exemplo de uso do spread operator, também conhecido c
     nome: "Aragorn",
     classe: "guerreiro"
     }
-.
 
     const equipoGuerreiro = {
     espada: "Andúril",
@@ -2019,7 +1904,6 @@ No aula anterior vimos um exemplo de uso do spread operator, também conhecido c
 Ainda usando o exemplo acima, agora vamos tentar juntar esses dois objetos em apenas um, que vamos chamar de personagens. Em um primeiro teste, vamos criar um novo objeto literal com { } e passar para este objeto as variáveis de cada personagem:
 
     const guerreiro = { fichaGuerreiro, equipoGuerreiro }
-.
 
     console.log(guerreiro)
 
@@ -2033,7 +1917,6 @@ O resultado no console não é exatamente o que queremos, pois os objetos ainda 
 Aqui é onde vamos utilizar o spread operator, adicionando a sintaxe de três pontos (reticências) antes do nome de cada objeto literal, separando-os com uma vírgula:
 
     const guerreiro = { ...fichaGuerreiro, ...equipoGuerreiro }
-.
 
     console.log(guerreiro)
 
@@ -2052,13 +1935,11 @@ Importante! Vale notar que, caso a sintaxe de espalhamento seja usada em objetos
     nome: "Gandalf",
     classe: "mago"
     }
-.
 
     const guerreiro = {
     nome: "Aragorn",
     classe: "guerreiro"
     }
-.
 
     const ranger = {
     nome: "Legolas",
@@ -2068,7 +1949,6 @@ Importante! Vale notar que, caso a sintaxe de espalhamento seja usada em objetos
 Os três objetos acima têm as mesmas propriedades. Mas o que acontece se tentarmos “espalhar” os dados em um único objeto com o spread operator? Vamos ver:
 
     const personagens = { ...mago, ...guerreiro, ...ranger }
-.
 
     console.log(personagens)
 
@@ -2082,13 +1962,14 @@ Apesar de prático, o uso da sintaxe de espalhamento pode gerar bastante process
 
 Caso queira, temos outra explicação deste processo aqui no artigo ES6 - Desestruturando objetos presente na nossa plataforma.
 
-** -> https://www.alura.com.br/artigos/es6-desestruturando-objetos?_gl=1*1yumh7b*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDM1MDY2MS4yLjEuMTY5NDM1Mjc1My4wLjAuMA..*_fplc*V0VxU21icHV1ZXJxa2kwMVpXWmxKNGNFcjVza0JJRjFLY28xdHZVS2tBZldNeWtaS3BqOHozR0FCaWUlMkJ1MWtrZDN5UUZvTms0ZVBwVyUyRmJvTERmcCUyQlA2cHdreFR3WWgwUjcxSmxCVFJGS0FWbWV5d1d2dTBhbEtQM2FDZDBnJTNEJTNE
+#### -> https://www.alura.com.br/artigos/es6-desestruturando-objetos?_gl=1*1yumh7b*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDM1MDY2MS4yLjEuMTY5NDM1Mjc1My4wLjAuMA..*_fplc*V0VxU21icHV1ZXJxa2kwMVpXWmxKNGNFcjVza0JJRjFLY28xdHZVS2tBZldNeWtaS3BqOHozR0FCaWUlMkJ1MWtrZDN5UUZvTms0ZVBwVyUyRmJvTERmcCUyQlA2cHdreFR3WWgwUjcxSmxCVFJGS0FWbWV5d1d2dTBhbEtQM2FDZDBnJTNEJTNE
 
--> https://youtu.be/f8a-qwKC5yk
+#### -> https://youtu.be/f8a-qwKC5yk
+
 
 ### O que aprendemos?
 
-** Nesta aula, você aprendeu:
+Nesta aula, você aprendeu:
 Como percorrer objetos a partir das chaves com for...in, iterando sobre as propriedades de um objeto como em um array;
 Que para extrair chaves e valores de objetos é possível utilizar métodos de Object;
 Que funções como .entries, .key e .value podem ser úteis na hora de trabalhar com objetos;
@@ -2169,3 +2050,34 @@ Algumas estruturas mais complexas, como datas ou a escrita em Regex, também pod
 
 
 ### O que aprendemos?
+
+
+## Aula - 05: Exercitando os conhecimentos
+
+    .js
+
+### Exercitando o aprendizado
+
+
+### Para saber mais: métodos de arrays
+
+
+### Encontrando um objeto
+
+
+### Filtrando objetos
+
+
+### Ordenando ao contrário
+
+
+### Faça como eu fiz
+
+
+### Projeto final do curso
+
+
+### O que aprendemos?
+
+
+### Conclusão
