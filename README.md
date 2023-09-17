@@ -2033,51 +2033,726 @@ Algumas estruturas mais complexas, como datas ou a escrita em Regex, também pod
 
 ### Lendo um arquivo JSON
 
+    cliente.json
+
+    leitura.js
+
+Vamos entender melhor a importância de conhecer essa nova ferramenta, assim como aprender a ler esse tipo de arquivo, na prática.
+Por que o formato JSON existe?
+Esse formato é muito utilizado quando temos um conjunto de configurações ou um padrão que queremos inserir no nosso código, acessando-o em outros lugares.
+Além disso, essa notação permite transformar um objeto em uma string e transmitir esses dados de um sistema para outro, no formato em que todas as strings são transmitidas.
+Ou seja, uma das maiores funcionalidades desse formato é tornar o objeto em algo mais fácil de manipular por outros sistemas que não apenas um código em JavaScript. É por isso, inclusive, que esse formato tem aquelas restrições sobre as quais comentamos anteriormente.
+Como usar esse arquivo?
+Para começar, vamos voltar ao Visual Studio e criar um arquivo JSON.
+No menu lateral esquerdo, criaremos uma nova pasta chamada "aula4" na raiz do nosso projeto. Nela, criamos um novo arquivo chamado "cliente.json". Vemos que o ícone que surge do lado esquerdo do nome do arquivo são chaves, diferente dos arquivos .js, demonstrando que esse formato tem uma ampla adoção.
+Nesse arquivo, colaremos o seguinte código (o mesmo que analisamos na aula anterior):
+
+    cliente.json
+
+    {
+      "nome": "Joao",
+      "email": "joao@firma.com",
+      "telefone": ["11223344", "11922334453"],
+      "endereco": {
+        "rua": "R. Joseph Climber",
+        "numero": 1337,
+        "apartamento": true,
+        "complemento": "ap 934"
+      }
+    }
+
+Na pasta "aula4", criaremos um novo arquivo que chamaremos de "leitura.js", em que estabeleceremos uma interação com o nosso arquivo cliente.json.
+Para isso, criamos uma nova variável chamada "dados" que vai armazenar o valor daquele objeto escrito em JSON. Ou seja, passaremos o arquivo local "./cliente.json" como parâmetro da função require() recebida por dados.
+
+    leitura.js
+
+    const dados = require("./cliente.json");
+
+Em seguida, pedimos para que o console.log retorne o que recebemos desse arquivo, passando a variável dados como seu parâmetro.
+
+    const dados = require("./cliente.json");
+
+    console.log(dados);
+
+Agora podemos voltar para o terminal e executar node aula4/leitura.js. Com isso, retornamos o objeto que criamos em cliente.json. Ou seja, nós utilizamos esse objeto no nosso código por meio do arquivo JSON.
+Para isso, usamos o require(). Basicamente, essa é uma função que o Node.js nos permite usar para, dentre outras finalidades, utilizar o código de outro lugar, assim como acabamos de fazer.
+
+Para aprofundar seus conhecimentos, deixamos algumas fontes de leitura sobre a função require().
 
 ### Para saber mais: require
 
+Neste curso utilizamos uma função, chamada require(), que é bem presente no Node.js . Esta função nos permitiu passar o caminho de um arquivo terminado em .json para obter o conteúdo de um arquivo do tipo JSON. Em cursos posteriores, iremos ver que essa função também pode ser utilizada para reaproveitar códigos que estão em outros arquivos, também chamados de módulos.
+Caso tenha interesse de aprofundar seus conhecimentos, o MDN tem um artigo explicando os módulos em JavaScript e a documentação do Node.js também elabora mais sobre o tema e o uso específico que fizemos durante a aula.
+
+### Artigo -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules
+
+### Documentação -> https://nodejs.org/api/modules.html#modules_modules
 
 ### Puxando um arquivo
 
+Digamos que temos um arquivo do tipo JSON e queremos resgatar o conteúdo salvo em uma determinada propriedade a partir do seguinte arquivo:
+Arquivo lutador.json:
+
+    {
+      "nome": "Leandro Macedo",
+      "esporte": "Jiu Jitsu",
+      "altura": 1.65,
+      "lutas": 12,
+      "vitorias": 7,
+      "categoria": "Peso pena"
+    }
+
+Após analisar o arquivo acima, marque a alternativa correta que contém um código que adquira as informações deste arquivo e quando executado mostre no terminal o valor da propriedade altura. Para isso, considere que o seu código e o arquivo JSON estão no mesmo diretório:
+
+Podemos escrever no arquivo leitura.js o seguinte código:
+
+    const lutador = require("./lutador.json");
+
+    console.log(lutador.altura);
+
+-> Utilizamos o require() para ler os dados,salvamos na variável dados e em seguida mostramos na tela com um console.log().
 
 ### Operações com um JSON
 
+    leitura.js
+
+Nós aprendemos a usar a função require() para ler um arquivo .json. Agora vamos aprender outras formas de receber um arquivo desse tipo, além de criar nossos próprios textos nesse formato.
+"Stringficação"
+Existe uma maneira de escrever um texto no formato JSON a partir de um objeto JavaScript comum.
+Para isso, vamos voltar ao arquivo leitura.js no VSCode. Nele, escreveremos uma variável que chamaremos de const clienteEmString. Faremos com que ela receba uma forma de transformar um objeto em string, uma função que podemos chamar de "stringficação", em tradução livre.
+Ou seja, essa variável receberá um objeto chamado JSON, um global no ambiente do Node. Nesse objeto, acessaremos a função stringify, que transforma o objeto em string. Passaremos dados, o arquivo contendo as informações de um cliente, como parâmetro dessa função.
+Por fim, faremos o console.log(), passando clienteEmString, para verificar o que essa função nos retorna na tela. Conforme os nomes indicam, deveria ser uma string.
+Teremos, então:
+
+    leitura.js
+
+    const dados = require("./cliente.json");
+
+    console.log(dados);
+    console.log(typeof dados);
+
+    const clienteEmString = JSON.stringify(dados);
+
+    console.log(clienteEmString);
+
+Agora, vamos ao terminal executar o código. O retorno é o seguinte:
+
+node aula4/leitura.js
+
+    {
+      "nome": 'Joao',
+      "email": 'joao@firma.com',
+      "telefone": ['11223344', '11922334453'],
+      "endereco": {
+        "rua": 'R. Joseph Climber',
+        "numero": 404,
+        "apartamento": true,
+        "complemento": 'ap 934'
+      }
+    }
+    object
+    {"nome":"Joao", "email":"joao@firma.com", "telefone":["11223344", "11922334453"], "endereco":{"rua":"R. Joseph Climber", "numero":404, "apartamento":true, "complemento":"ap 934"}}
+
+Ou seja, temos os dois primeiros console.log() do arquivo leitura.js, retornando um objeto e o tipo do que foi salvo na variável, um objeto.
+Em seguida, temos o console.log() que codamos agora, que retorna uma string com as mesmas informações daquele objeto, organizadas em uma linha só e sem a interatividade dos objetos. Ou seja, é apenas um conjunto de letras que não tem os comportamentos que um objeto teria.
+Para não restarem dúvidas sobre isso, podemos inserir em leitura.js um novo console.log() pedindo o tipo de clienteEmString, assim como fizemos anteriormente:
+
+    console.log(typeof clienteEmString);
+
+Vamos executar o código novamente no terminal, o que nos retornará:
+
+node aula4/leitura.js
+
+    {"nome":"Joao", "email":"joao@firma.com", "telefone":["11223344", "11922334453"], "endereco":{"rua":"R. Joseph Climber", "numero":404, "apartamento":true, "complemento":"ap 934"}}
+    string
+
+Ou seja, na última linha do retorno, temos o indicativo de que realmente estamos lidando com uma string. Sendo assim, não conseguimos interagir com ela da mesma forma que conseguimos com os objetos.
+Por exemplo, as propriedades nela não estão marcadas. Para testar isso, podemos fazer mais um console.log() tentando extrair o valor da propriedade "nome":
+
+    console.log(clienteEmString.nome)
+
+Vamos executar o código novamente:
+
+node aula4/leitura.js
+
+    {"nome":"Joao", "email":"joao@firma.com", "telefone":["11223344", "11922334453"], "endereco":{"rua":"R. Joseph Climber", "numero":404, "apartamento":true, "complemento":"ap 934"}}
+    string
+    undefined
+
+Se fosse um objeto, receberíamos "Joao" no retorno. Mas como é uma string que não tem acesso às propriedades do objeto, recebemos "undefined". Ou seja, realmente temos um comportamento de string.
+Mas, qual a utilidade de transformar um objeto, com todas aquelas funcionalidades, em uma string?
+Reiteramos que a grande função do JSON é salvar e transmitir informações em texto, de modo simples, algo bastante necessário para a infraestrutura da tecnologia.
+Um objeto JavaScript comum é feito para operar dentro de um código JavaScript; já um código em JSON compartilha os dados de forma mais genérica e adaptável.
+Mas e se nós tivéssemos recebido essas informações em forma de texto, ou como uma string, e quiséssemos transformar esse código de volta em objeto, para operar com ele? É possível?
+"Traduzir" a string para objeto
+Para transformar clienteEmString em um objeto novamente, usaremos a função .parse do objeto JSON que usamos no passo anterior.
+Em português, essa função significaria algo como "traduzir" ou "adequar". Ou seja, ela lerá uma string e tentará montar o objeto a partir dela. Então teremos JSON.parse().
+Como parâmetro dessa função, passaremos clienteEmString e declararemos seu resultado como const objetoCliente:
+
+    const objetoCliente = JSON.parse(clienteEmString);
+
+Em tese, o que receberemos disso será igual ao que recebemos em dados, quando lemos o arquivo cliente.json. Para verificar isso, chamaremos:
+
+    console.log(objetoCliente);
+
+Agora, ao executar o código novamente no terminal, recebemos:
+
+node aula4/leitura.js
+
+    {
+      "nome": 'Joao',
+      "email": 'joao@firma.com',
+      "telefone": ['11223344', '11922334453'],
+      "endereco": {
+        "rua": 'R. Joseph Climber',
+        "numero": 404,
+        "apartamento": true,
+        "complemento": 'ap 934'
+      }
+    }
+
+Conforme o esperado, temos o mesmo objeto que tinha sido salvo na leitura do arquivo JSON em dados.
+Conclusões
+Conseguimos percorrer todo o caminho:
+-> Ler um arquivo .json;
+-> Transformá-lo em uma string para podermos salvá-lo, transmiti-lo ou usá-lo em alguma outra operação que é comumente realizada com strings;
+-> Por fim, transformamos essa string de volta em um objeto para podermos alterar as propriedades e realizar operações comuns do JavaScript.
 
 ### Para saber mais: copiando objetos
 
+A forma como os objetos são armazenados e como fazer cópias de seus valores é também um conhecimento importante já que existem diversos detalhes da forma como o JavaScript lida com isso. Você pode se deparar com alguns problemas caso não leve esses fatores em consideração.
+Pensando nisso, separamos para você um artigo sobre clonagem profunda com imutabilidade. Ele está presente na nossa plataforma e é uma leitura interessante agora que você já teve um bom contato com os objetos em JavaScript.
+
+### Artigo -> https://www.alura.com.br/artigos/implementar-funcao-clonagem-profunda-imutabilidade-js?_gl=1*3uz1ta*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDkwNzk5MS41LjEuMTY5NDkxMTU2Ni4wLjAuMA..*_fplc*b2JkdXd1cU42JTJCbjVLd0dobUJPbHdLTVNzalJ0QmxWeE5CM0dQZmhKZlhZMHFwdmVRdE9ibkY5MGpkNUdDeDdseWwxOEpFaXpHS3c3WU5kJTJGbEtoNXZMb1NVY3BWWDJWYyUyRkZXc29qR0Y0Rzk2OFF3QyUyQmMlMkJiY0tZdiUyRllqM05nJTNEJTNE
 
 ### Trabalhando com JSON
 
+Nesta aula aprendemos sobre o formato JSON. Vimos o que motivou sua existência, como é sua sintaxe e de que modo podemos utilizar esse formato, como por exemplo, armazenando um objeto em um arquivo.
+Primeiramente recebemos um arquivo no formato JSON com algumas informações sobre um cliente:
+Arquivo cliente.json:
+
+    {
+      "nome": "Joao",
+      "email": "joao@firma.com",
+      "telefone": ["11223344", "11922334453"],
+      "endereco": {
+        "rua": "R. Joseph Climber",
+        "numero": 404,
+        "apartamento": true,
+        "complemento": "ap 934"
+      }
+    }
+
+Em seguida, fizemos a leitura deste arquivo e testamos alguns métodos que o próprio Node nos fornece para utilizar o formato JSON, como por exemplo, transformando um objeto em uma string e retomando um objeto à partir dessas strings, como podemos observar no código abaixo:
+
+Arquivo leitura.js:
+
+    const dados = require("./cliente.json");
+
+    console.log(dados);
+    console.log(typeof dados);
+
+    const clienteEmString = JSON.stringify(dados);
+
+    console.log(clienteEmString);
+    console.log(typeof clienteEmString);
+
+    console.log(clienteEmString.nome);
+
+    const objetoCliente = JSON.parse(clienteEmString);
+
+    console.log(objetoCliente);
 
 ### O que aprendemos?
+
+Nessa aula, você aprendeu:
+-> O que é o formato JSON e por qual motivo o utilizamos, como por exemplo a transmissão de dados ou armazenamento de configurações;
+-> Qual a sintaxe do JSON e suas limitações, como não ter variáveis ou comentários;
+-> Como ler um arquivo .json no Node.js;
+-> Como utilizar as funções nativas do Node.js para manipular um JSON.
 
 
 ## Aula - 05: Exercitando os conhecimentos
 
-    .js
-
 ### Exercitando o aprendizado
 
+Para continuar nossos estudos, vamos fazer alguns testes mais elaborados com os objetos.
+Para isso, vamos na barra lateral esquerda "Explorer" e clicamos no ícone "New Folder" para criar uma nova pasta na raiz do nosso projeto, chamada aula5.
+Na atividade "Preparando o ambiente", você pode copiar um texto para o arquivo do projeto.
+Para salvar essa atividade dentro da pasta aula5, selecione a pasta e clique no ícone "New File" em "Explorer". Assim, criamos um arquivo que chamamos de clientes.json.
+Logo, vamos copiar o conteúdo da atividade - que é uma lista com informações de vários clientes - e colar dentro do novo arquivo clientes.json.
+Vamos ver quais elementos estão contidos dentro dessa lista que copiamos?
+O bloco mais externo do novo arquivo é um array, por isso, começa e termina com colchetes "[]".
+Esse array contém 20 objetos entre chaves "{}" que correspondem as entradas dos clientes.
+Cada entrada contém informações fictícias desses vários clientes. E esses dados de cada clientes são representados por pares chave-valor.
+Um par chave-valor consiste em um campo de chave (entre aspas), seguido por dois pontos (:) e depois seu valor (entre aspas)
+Então, dentro das chaves de cada cliente, temos os campos de nome, email, telefone e seus respectivos valores. Note que a chavetelefone tem como seu valor um array.
+O último dado de cada cliente é um objeto endereço, entre chaves, que tem pares chave-valor de logradouro, numero, cep, apartamento e complemento. Perceba que apartamento é um booleano.
+
+    clientes.json
+
+    [
+      {
+        "nome":"Olva",
+        "email":"olippini0@deviantart.com",
+        "telefone":[
+          "4733865848",
+          "47933865848"
+        ],
+        "endereco":{
+          "logradouro":"Rua Transport",
+          "numero":"05",
+          "cep":"46140",
+          "apartamento":true,
+          "complemento":"ap 102"
+        }
+      },
+      {
+        "nome":"Oralle",
+        "email":"orajchert1@clickbank.net",
+        "telefone":[
+          "5896279799",
+          "58996279799"
+        ],
+        "endereco":{
+          "logradouro":"Rua Kedzie",
+          "numero":"89",
+          "cep":"613840",
+          "apartamento":false
+        }
+      },
+
+    //...código omitido dos demais objetos com dados dos clientes
+
+    ]
+
+Nas próximas aulas, vamos fazer exercícios de manipulações comumente feitas em objetos.
+Por exemplo, faremos uma função para encontrar um determinado objeto conforme uma chave ou valor procurado.
+Além disso, vamos filtrar os valores dos objetos desse array de acordo com um parâmetro que queiramos testar.
+Também vamos aprender a ordenar esses valores, dado algum critério (por exemplo, chave ou ordem específica).
 
 ### Para saber mais: métodos de arrays
 
+Para simplificar nossa vida, é muito comum utilizarmos os métodos já prontos de arrays durante o desenvolvimento. Já que nos próximos vídeos vamos usar de diversas funções, e para refrescar nossa memória quanto a esse assunto, é importante ter por perto alguma referência da linguagem.
+Então, caso tenha alguma dúvida, não hesite em pausar o vídeo e conferir a documentação do MDN sobre arrays.
+
+### Documentação -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 ### Encontrando um objeto
 
+    encontrar.js
+
+Nosso primeiro passo é fazer um exercício de encontrar um determinado objeto dentro da nossa lista de objetos.
+Primeiramente, na pasta aula5 dentro do Visual Studio Code, vamos criar um arquivo (ícone "New File") chamado encontrar.js
+Dentro desse arquivo, devemos ler aquele array com objetos que correspondem aos clientes.
+Para isso, chamamos uma variável const clientes recebendo a função require(). Como parâmetro da função usaremos o caminho do arquivo local JSON de clientes.
+    
+    encontrar.js
+
+    const clientes = require("./clientes.json");
+
+Vamos confirmar se conseguimos carregar essa lista de clientes? Na próxima linha, peça para mostrar a variável clientes em console.log().
+
+    console.log(clientes);
+
+No terminal, vamos executar o comando node, seguido do nome do arquivo a ser executado.
+
+node aula5/encontrar.js
+
+Quando apertamos a tecla "Enter", podemos ver uma grande lista dos clientes fictícios - o que significa que conseguimos carregar o que queríamos.
+Voltando arquivo encontrar.js no Visual Code Studio, podemos apagar a linha do método console.log para poder começar a escrever a nossa solução.
+Assim, vamos fazer uma função encontrar() com alguns parâmetros necessários para encontrar um determinado objeto.
+A primeira coisa que precisamos passar como parâmetro da função é qual a informação que vamos buscar, uma lista de clientes. Por isso, chamamos o primeiro parâmetro de lista.
+Agora, devemos especificar onde vamos buscar dentro dessa lista. Vamos buscar pelo nome? Rua? Número da casa? Esses campos citados são todos nomes de chaves, assim, nomearemos o parâmetro chave.
+Depois de especificar o parâmetro de chave, devemos dar o valor que queremos buscar. Diante disso, vamos nomear o último parâmetro como valor.
+
+    function encontrar(lista, chave, valor) {
+
+    }
+
+A nossa lista de clientes é um array com vários objetos. Por isso, podemos utilizar os métodos de array para nosso benefício.
+Pois, existe um método de array, chamado find, que faz uma busca e nos retorna a primeira instância correspondente ao que foi buscado.
+Portanto, na próxima linha entre as chaves "{}", vamos instruir a função encontrar a retornar um item da lista usando essa função find, ou seja, return lista.find().
+O que esse método vai fazer? Vamos dar um item da lista para ele e, se aquela chamada sair verdadeira, o método nos retorna aquele item.
+Para que o método saiba o que buscar dentro da lista, vamos passar um item para uma função flecha (=>) que vai comparar se o item dentro da chave é igual ao valor que buscamos.
+
+    function encontrar(lista, chave, valor) {
+      return lista.find((item) => item[chave] === valor);
+    }
+
+Para testar o funcionamento da função, vamos criar uma variável const encontrado para receber uma chamada da função encontrar com os parâmetros que buscamos.
+Queremos encontrar uma pessoa chamada Kirby da nossa lista de clientes. Assim, os parâmetros de encontrar serão: a lista clientes, a chave "nome" e o valor dessa chave,"Kirby".
+
+    const encontrado = encontrar(clientes, "nome", "Kirby");
+
+Agora, podemos ver se alguém foi encontrado. Novamente, vamos usar console.log para mostrar a variável encontrado.
+Esse é o código completo após salvá-lo:
+
+    const clientes = require("./clientes.json");
+
+    function encontrar(lista, chave, valor) {
+      return lista.find((item) => item[chave] === valor);
+    }
+
+    const encontrado = encontrar(clientes, "nome", "Kirby");
+
+    console.log(encontrado);
+
+Assim, podemos executar node aula5/encontrar.js no terminal para verificar se o código funciona.
+No terminal, podemos ver que a função encontrar usou o método de array e nos retornou o objeto inteiro para a propriedade "nome" sendo igual a "Kirby".
+terminal :
+
+    {
+        "nome":"Kirby",
+        "email":"kcoard8@squidoo.com",
+        "telefone":[
+          "9291767581",
+          "92991767581"
+        ],
+        "endereco":{
+          "logradouro":"Rua Valley Edge",
+          "numero":"5",
+          "cep":"20195",
+          "apartamento":false,
+          "complemento":"Venda da tia Zezé"
+        }
+      }
+
+Será que esse código que criamos no Visual Studio Code vai funcionar para encontrar quaisquer dados em uma lista de objetos?Afinal, não queremos que ele funcione somente para o campo "nome".
+Para verificar, podemos fazer uma variação utilizando outros objetos e campos presente em nossa lista.
+Vamos copiar do nosso arquivo clientes.json um número específico de telefone, por exemplo, o primeiro número de telefone da Amye. Então, vamos mandá-lo procurar a chave "telefone" com o valor copiado em string.
+
+    encontrar.json
+
+    const encontrado2 = encontrar(clientes, "telefone", "1918820860");
+
+    console.log(encontrado2);
+
+No terminal, executamos novamente node aula5/encontrar.js. Contudo, não conseguimos encontrar nenhuma equivalência para o telefone da Amye.
+Isso porque, dentro da nossa função encontrar, estamos utilizando uma igualdade estrita (===).
+Lembre-se que o telefone da Amye está dentro de um array com duas strings diferentes de números de telefone. Um array com dois números de telefone é diferente do valor copiado - que tinha somente um número de telefone específico.
+Por isso, a comparação de uma string com um array que contém duas strings vai retornar falso e o método não encontrará a Amye.
+Para resolver o problema, podemos trocar essa comparação. Ao invés de uma igualdade estrita, vamos utilizar o método includes com o parâmetro valor.
+
+    function encontrar(lista, chave, valor) {
+      return lista.find((item) => item[chave].includes(valor));
+    }
+
+Agora, estamos utilizando um método de array, mas que também funciona para strings.
+Dessa maneira, se damos o valor de um telefone que está em um array, por exemplo, o método vai procurar se o telefone pesquisado está incluído naquela lista. E se o valor for uma string, também vai procurar o valor que contém a informação dada.
+Para nossa busca, é uma maneira mais flexível e pode funcionar.
+Testamos a nossa troca no terminal, executando node aula5/encontrar.js. E agora, sim, conseguimos encontrar tanto o Kirby quanto a Amye.
+Essa é uma forma simples de buscar um objeto específico dentre uma lista de objetos.
 
 ### Filtrando objetos
 
+    filtrar.js
+
+Vamos mostrar de forma prática um possível problema e como solucioná-lo utilizando filtros.
+Imagine que estamos lidando com nossa loja, como na problemática abordada enquanto construíamos os objetos.
+E pedimos aos nossos clientes que fizessem um cadastro com suas informações de endereço para, por exemplo, poder enviar boletos ou encomendas.
+Se o cliente vive em uma casa, somente o número da casa já é suficiente para realizar a entrega. Contudo, se for um apartamento é vantajoso ter também o campo "complemento" preenchido.
+No arquivo clientes.json no Visual Studio Code, existem algumas entradas de clientes onde o booleano do campo de apartamento é verdadeiro e possuem um campo de complemento preenchido com mais detalhes.
+Contudo, também existem algumas entradas onde o campo apartamento é verdadeiro, mas não há mais complementos. Como, por exemplo, na entrada de uma pessoa chamada Blakeley.
+O ideal seria ter uma forma de validar a informação no momento do preenchimento dos dados.
+Mas agora que já adquirimos todos os endereços, uma solução é tentar contactar cada uma dessas pessoas com informações incompletas e pedi-las para fazer o recadastramento.
+Porém, como saber quais são essas pessoas que necessitam se recadastrar?
+Para não precisar procurar manualmente em cada uma das entradas, podemos filtrar todas as pessoas que moram em apartamento, mas não tem o campo complemento inicializado ou satisfatório.
+Com esse propósito, vamos criar um novo arquivo (ícone "New File") chamado filtrar.js dentro da pasta aula5.
+Vamos criar uma função para tentar resolver nosso problema, filtrando somente as pessoas que marcaram que vivem em apartamento, mas não forneceram um complemento.
+Para isso, primeiro criamos uma variável const clientes e recebemos a função require() para o arquivo local de clientes.
+
+    filtrar.js
+
+    const clientes = require("./clientes.json");
+
+Depois, criamos uma função filtrarApartamentosSemComplemento() que tem a lista clientes como parâmetro.
+
+    function filtrarApartamentoSemComplemento(clientes) {
+
+    }
+
+Os métodos de array nos fornecem uma forma de filtrar dados, chamado filter.
+Assim, na próxima linha entre as chaves "{}", vamos retornar a lista clientes chamando a função filter().
+Essa função filter vai receber uma função flecha (=>), passando por cada campo de cliente. Por isso, o parâmetro da função filter é cliente no singular.
+Se essa função flecha for verdadeira, o método seleciona e retorna essa entrada. Se for falsa, a instrução vai ser ignorada.
+
+
+    function filtrarApartamentoSemComplemento(clientes) {
+      return clientes.filter((cliente) => {
+
+      });
+    }
+
+Para testar se a pessoa tem um apartamento e não tem a propriedade complemento, vamos escrever o comportamento da função flecha entre as chaves "{}" contidas nos parênteses "()" da função filter.
+Primeiramente, a função flecha deve retornar o resultado do teste cliente.endereco.apartamento === true para saber se há pessoa tem apartamento.
+Contudo, o campo apartamento já é um booleano. Se esse campo for verdadeiro, já vai ser igual a "True" (verdadeiro). Por isso, podemos omitir === true.
+Após essa verificação, também devemos analisar se o campo complemento está preenchido.
+Para isso, acrescentaremos o operador && depois da primeira instrução para executar ambas sequencialmente.
+E, na próxima linha, verificaremos se cliente.endereco tem uma propriedade, utilizando um método de objeto chamado hasOwnProperty().
+Essa função hasOwnProperty vai verificar se o endereço do cliente tem complemento, por isso, seu parâmetro é "complemento".
+Mas, lembre-se que queremos o nome das pessoas que não tem um complemento preenchido. Por isso, acrescentamos um sinal de exclamação ! no começo da linha para contrariar a expressão contendo hasOwnProperty.
+
+    function filtrarApartamentoSemComplemento(clientes) {
+      return clientes.filter((cliente) => {
+        return (
+          cliente.endereco.apartamento &&
+          !cliente.endereco.hasOwnProperty("complemento")
+        );
+      });
+    }
+
+Agora, podemos criar uma nova lista para saber quais clientes foram filtrados e verificar quem tem o campo apartamento verdadeiro, mas sem complementos.
+Então, vamos criar uma variável const filtrados para receber a chamada da função filtrarApartamentoSemComplemento, passando a nossa lista de clientes.
+
+    const filtrados = filtrarApartamentoSemComplemento(clientes);
+
+Como nas aulas anteriores, vamos usar console.log para mostrar a variável filtrados.
+Observe como ficou o código completo depois de salvá-lo:
+
+    const clientes = require("./clientes.json");
+
+    function filtrarApartamentoSemComplemento(clientes) {
+      return clientes.filter((cliente) => {
+        return (
+          cliente.endereco.apartamento &&
+          !cliente.endereco.hasOwnProperty("complemento")
+        );
+      });
+    }
+
+    const filtrados = filtrarApartamentoSemComplemento(clientes);
+
+    console.log(filtrados);
+
+Para visualizar nossa lista de filtragem, vamos abrir o terminal e executar o comando node aula5/filtrar.js
+Ao apertar a tecla "Enter", podemos encontrar três entradas de pessoas que seguem os quesitos estabelecidos no filtro (apartamento como "true" e sem complemento).
+Esse é um problema muito comum que você pode encontrar. Nessa aula, vimos apenas uma das inúmeras formas de resolvê-lo, utilizando uma lista de objetos.
+
+### Ordenando objetos
+
+    ordenar.js
+
+Nessa aula, vamos aprender a como podemos ordenar uma lista de objetos.
+Com essa finalidade, vamos criar um novo arquivo (ícone "New File") chamado ordenar.js dentro da pasta aula5 no Visual Studio Code.
+Vamos escolher algum parâmetro, propriedade ou chave da nossa lista clientes.json para ordenar a lista de acordo com essa escolha.
+Por exemplo, como ordenar a lista de clientes em ordem alfabética.
+Primeiramente, devemos importar a lista para o arquivo ordenar.js.
+Para isso, criamos uma variável const clientes para receber a função require() com o caminho do arquivo local da lista.
+    
+    ordenar.js
+
+    const clientes = require("./clientes.json");
+
+Depois, escrevemos uma função genérica para lista de objetos, chamada ordenar. Seus parâmetros serão a lista a ser ordenada e a propriedade de ordenação.
+
+    function ordenar(lista, propriedade) {
+
+    }
+
+Como vimos anteriormente, os arrays implementam métodos para ajudar a resolver situações comuns. Para nosso caso, com a função sort() podemos ordenar uma lista com base na comparação de dois objetos.
+Assim, na próxima linha entre as chaves "{}", vamos dizer que uma variável const resultado vai receber a lista chamando a função sort().
+Devemos passar para essa função como comparar dois elementos, por exemplo, como sabemos quea é maior ou menor que b.
+Por isso, os parâmetros de sort() são a e b. Seguido por uma função flecha (=> é conhecida em inglês como arrow function) e as chaves "{}" correspondentes.
+
+    function ordenar(lista, propriedade) {
+      const resultado = lista.sort((a, b) => {
+
+      });
+
+    }
+
+No nosso caso, a e b são objetos e queremos acessar a propriedade dentro daqueles objetos para compará-los.
+A função sort pede que implementemos o comando if para fazer essa comparação. E também devemos retornar valores diferentes para cada situação (se a maior, se a menor ou se a e b são iguais).
+Então, em uma nova linha - ainda entre as chaves "{}" da função flecha - vamos testar se a propriedade de a é menor do que a mesma propriedade de b. Ou seja, if (a[propriedade] < b[propriedade]).
+Se a expressão for verdadeira, deve-se retornar um valor negativo, devido a ordem dos parâmetros.
+Se a propriedade de a for menor do que a mesma propriedade de b, devemos retornar um valor positivo.
+E se as duas propriedades forem iguais, retornaremos 0. Pois, se não entrou em nenhuma das expressões anteriores, as propriedades de ambos são iguais e não precisamos do else.
+Essa é a nossa função de ordenação. O que significa que a variável resultado tem uma nova lista ordenada.
+Por isso, entre as chaves "{}" da função ordenar, podemos retornar resultado para mostrar o que obtivemos nessa função.
+
+    function ordenar(lista, propriedade) {
+      const resultado = lista.sort((a, b) => {
+        if (a[propriedade] < b[propriedade]) {
+          return -1;
+        }
+        if (a[propriedade] > b[propriedade]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      return resultado;
+    }
+
+Agora, vamos criar uma variável para receber uma lista com os valores ordenados, por exemplos, os nomes em ordem alfabética.
+Com essa finalidade, criamos a variável const ordenadoNome que recebe a função ordenar com dois parâmetros: a nossa lista clientes e o nome da propriedade que é "nome".
+
+    const ordenadoNome = ordenar(clientes, "nome");
+
+Vamos pedir para mostrar na tela essa nova lista ordenadoNome.
+
+    console.log(ordenadoNome);
+
+Depois de salvar, o código completo ficou assim:
+
+    const clientes = require("./clientes.json");
+
+    function ordenar(lista, propriedade) {
+      const resultado = lista.sort((a, b) => {
+        if (a[propriedade] < b[propriedade]) {
+          return -1;
+        }
+        if (a[propriedade] > b[propriedade]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      return resultado;
+    }
+
+    const ordenadoNome = ordenar(clientes, "nome");
+
+    console.log(ordenadoNome);
+
+No terminal, podemos executar node aula5/ordenar.js para visualizar a lista ordenadoNome. E conseguimos alcançar o planejado, a lista agora está ordenada em ordem alfabética.
+Nessa aula, vimos como ordenar uma lista de objetos utilizando um método de array, enquanto acessamos os parâmetros dentro do nosso objeto em específico e conhecemos mais de seu funcionamento.
 
 ### Ordenando ao contrário
 
+Na aula anterior utilizamos o método sort() para ordenar uma lista de valores passando uma função de comparação:
+
+const clientes = require("./clientes.json");
+
+    function ordenar(lista, propriedade) {
+      const resultado = lista.sort((a, b) => {
+        if (a[propriedade] < b[propriedade]) {
+          return -1;
+        }
+        if (a[propriedade] > b[propriedade]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      return resultado;
+    }
+
+    const ordenadoNome = ordenar(clientes, "nome");
+
+    console.log(ordenadoNome);
+
+Porém, digamos que agora queremos reordenar as listas na ordem inversa. Como podemos realizar essa tarefa? Marque as alternativas que contém soluções possíveis. Para resolver essa questão, você pode utilizar dessa referência, caso necessário.
+
+Após a ordenação da lista, podemos chamar o método reverse() na nova lista e obter uma lista que foi reorganizada de trás pra frente, com a seguinte implementação:
+
+    const ordenadoNome = ordenar(clientes, "nome");
+    const ordenadoInverso = ordenadoNome.reverse();
+
+-> Apesar de não ter alterado o método de ordenação que criamos e ter adicionado uma funcionalidade, obtivemos o resultado desejado fazendo uma manipulação com a lista.
+
+Podemos adicionar um parâmetro opcional na função ordenar(),com a preferência de ordenação, e conseguimos criar uma condicional após a ordenação que verifica esse parâmetro e usa o método reverse(). Ao fazer isso, o código ficaria dessa forma:
+
+    function ordenar(lista, propriedade, ordem = "crescente") {
+      const resultado = lista.sort((a, b) => {
+        if (a[propriedade] < b[propriedade]) {
+          return -1;
+        }
+        if (a[propriedade] > b[propriedade]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      if (ordem !== "crescente") {
+        resultado.reverse();
+      }
+
+      return resultado;
+    }
+
+-> Essa é uma das formas que podemos cumprir com o objetivo que foi proposto.
 
 ### Faça como eu fiz
 
+Nesta aula usamos diversos métodos de arrays para criar listas de objetos e realizar operações que são muito comuns no nosso cotidiano de desenvolvimento. Utilizamos um arquivo JSON para armazenar diversas entradas com informações agregadas, criamos funções para buscar, filtrar e ordenar essas listas e exercitamos o que aprendemos até o momento.
 
-### Projeto final do curso
+Primeiramente, salvamos as informações de clientes fornecidos em um arquivo clientes.json, e seu conteúdo pode ser encontrado no projeto do GitHub.
 
+Em seguida criamos uma função para buscar um determinado objeto dados um par de chave e valor:
+
+Arquivo encontrar.js:
+
+    const clientes = require("./clientes.json");
+
+    function encontrar(lista, chave, valor) {
+      return lista.find((item) => item[chave].includes(valor));
+    }
+
+    const encontrado = encontrar(clientes, "nome", "Kirby");
+
+    const encontrado2 = encontrar(clientes, "telefone", "1918820860");
+
+    console.log(encontrado);
+
+Depois decidimos filtrar aqueles clientes que inseriram a informação que moram em apartamento, mas não forneceram um valor no campo complemento. Então seria interessante ter uma lista com todos objetos que satisfizesse essa condição, o que nos fez chegar até:
+
+Arquivo filtrar.js:
+
+    const clientes = require("./clientes.json");
+
+    function filtrarApartamentoSemComplemento(clientes) {
+      return clientes.filter((cliente) => {
+        return (
+          cliente.endereco.apartamento &&
+          !cliente.endereco.hasOwnProperty("complemento")
+        );
+      });
+    }
+
+    const filtrados = filtrarApartamentoSemComplemento(clientes);
+
+    console.log(filtrados);
+
+Por último, tivemos o exercício de ordenar uma lista de objetos dada uma determinada chave:
+
+Arquivo ordenar.js:
+
+    const clientes = require("./clientes.json");
+
+    function ordenar(lista, propriedade) {
+      const resultado = lista.sort((a, b) => {
+        if (a[propriedade] < b[propriedade]) {
+          return -1;
+        }
+        if (a[propriedade] > b[propriedade]) {
+          return 1;
+        }
+        return 0;
+      });
+
+      return resultado;
+    }
+
+    const ordenadoNome = ordenar(clientes, "nome");
+
+    console.log(ordenadoNome);
 
 ### O que aprendemos?
 
+Nessa aula, você aprendeu:
+-> Que podemos utilizar os métodos de listas em conjunto com objetos;
+-> Como passamos os parâmetros e propriedades dos objetos para alguns métodos de listas;
+-> Vimos exemplos de como encontrar, filtrar e ordenar uma lista de objetos.
 
 ### Conclusão
+
+O que aprendemos nesse curso?
+Nesse curso, aprofundamos nossos conhecimentos nos objetos de JavaScript. Também trabalhamos diversas formas de acessar e manipular as propriedades de um objeto específico.
+Além disso, aprendemos sobre a estrutura dos objetos - como cada propriedade era nomeada e acessada, como combinar essas propriedades, criar novos objetos, usar o spread operator e várias outras manipulações.
+Também conhecemos um novo formato, chamado JSON, entendemos sua sintaxe, como funciona esse formato, como guardá-lo e quais são seus usos em nosso cotidiano.
+Fizemos vários exercícios operando listas de objetos - filtramos, buscamos e ordenamos objetos dados os critérios, enquanto estudávamos cada método.
+Lembre-se que esse conteúdo é essencial para continuar o seu desenvolvimento na jornada de JavaScript e prosseguir com seus estudos. Principalmente, para o conteúdo sobre Orientação a Objetos, um paradigma muito famoso e com uma grande importância e utilidade nos dias de hoje.
+Qualquer que seja seu foco, é muito bom saber que seu conhecimento cresceu com esse curso. Estamos orgulhosos de fazer parte desse processo.
+Esperamos que tenha gostado desse conteúdo e que tenha atingido suas expectativas. Não deixe de avaliar e preencher o formulário de conclusão do curso para nos dizer como podemos melhorar sua experiência.
