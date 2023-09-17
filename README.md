@@ -2,7 +2,9 @@
 
 ## Aula - 01: O que são objetos
 
-    objeto.js
+```javascript
+objeto.js
+```
 
 ### O que são objetos
 
@@ -13,64 +15,78 @@ Logo após, clicaremos no primeiro ícone ao lado da pasta OBJETOS para criar um
 Será aberto o arquivo objeto.js vazio. Nele, faremos um exemplo com as informações que vimos no curso anterior de arrays ("matrizes").
 Vamos supor que temos uma lista com diversos CPFs ou alguma outra informação repetida, ou um tipo simples do dado. Chamaremos uma listaCPFs declarando a como uma const, e usaremos os colchetes "[]", para listar os valores.
 
-    objeto.js
-
-    const listaCPFs = [1111111, 22222, 3333];
+```javascript
+objeto.js
+```
+```javascript
+const listaCPFs = [1111111, 22222, 3333];
+```
 
 Uma lista de CPFs é uma estrutura de dados que armazena a mesma informação várias vezes. Por exemplo, no caso do CPF são vários CPFs diferentes.
 Mas se usarmos essa mesma estrutura para guardar outro dado, por exemplo, sobre uma pessoa? Vamos criar uma const informacoesPessoa com os valores que desejamos saber sobre a pessoa.
 
-    const listaCPFs = [1111111, 22222, 3333];
+```javascript
+const listaCPFs = [1111111, 22222, 3333];
 
-    const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
-
+const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
+```
 Com isso, temos valores que se tivéssemos mais de uma pessoa estariam repetindo. Vamos supor que temos mais uma pessoas:
 
-    const listaCPFs = [1111111, 22222, 3333];
+```javascript
+const listaCPFs = [1111111, 22222, 3333];
+   
+const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
     
-    const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
-    
-    const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
+const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
+```
 
 Observe que todos os campos estariam sendo repetidos: nome, idade e CPF. E não necessariamente precisamos de todos os campos repetidos. Podemos remover este segundo informacoesPessoa.Outro detalhe é: e se quisermos acessar o nome dessa pessoa?
 Para isso, usaremos o console.log(), para visualizar o nome dessa pessoa. Pegaremos essa informação de informacoesPessoa, no índice 1, isso porque o nome é no índice 0 e o valor no índice 1.
 
-    const listaCPFs = [1111111, 22222, 3333];
+```javascript
+const listaCPFs = [1111111, 22222, 3333];
 
-    const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
+const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
 
-    console.log(informacoesPessoa[1]);
+console.log(informacoesPessoa[1]);
+```
 
 Porém, o número 1 não é tão intuitivo quando queremos saber o nome da pessoa. Seria mais interessante chamarmos as informações da pessoa e passar o nome.
 Vamos supor que adicionaremos ou não outros campos, e cada um terá um número com certa informação repetida. Pode ocorrer alguma confusão nessas horas.
 Para evitar isso, faremos outra estrutura de dados chamado objetos, e analisar como podemos lidar com esses dados. Abaixo do código do arquivo objeto.js, criaremos um objeto que armazena as informações de uma pessoa.
 Criaremos um const objetoPessoa e atribuiremos com chaves "{}" alguns campos.
 
-    const objetoPessoa = {
+```javascript
+const objetoPessoa = {
 
-    };
+};
+```
 
 Em JavaScript, um objeto é uma entidade independente com propriedades e tipos.
 Podemos comparar com um copo, que possui uma cor, um formato, um peso, um material que foi feito, entre outras coisas. Essas informações são o que chamamos de propriedades de um objeto.
 Por exemplo, ao nos referirmos a uma pessoa, nomeamos as propriedades de nome, idade e CPF. Logo, os objetos do JavaScript também vão ter essa característica de propriedades.
 Como declaramos as propriedades em um objeto? Escrevemos a propriedade, o nome, por exemplo, atribuímos dois pontos ":" e inserimos o valor.
 
-    const objetoPessoa = {
-      nome: "Jose",
-    };
+```javascript
+const objetoPessoa = {
+  nome: "Jose",
+};
+```
 
 Cada propriedade é separada por vírgula e quebramos a linha para ficar como se fosse uma lista, com uma propriedade e seu respectivo valor, um abaixo do outro, de cima para baixo.
 
-    const listaCPFs = [1111111, 22222, 3333];
+```javascript
+const listaCPFs = [1111111, 22222, 3333];
 
-    const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
+const informacoesPessoa = ["nome", "Jose", "idade", 32, "CPF", "1111222333"];
 
-    console.log(informacoesPessoa[1]);
+console.log(informacoesPessoa[1]);
 
-    const objetoPessoa = {
-      idade: 32,
-      nome: "Jose",
-    };
+const objetoPessoa = {
+  idade: 32,
+  nome: "Jose",
+};
+```
 
 Chamamos essa estrutura de cada propriedade de par de chave e valor, em que a chave é o nome da propriedade e o valor é o que está armazenado na propriedade.
 Por exemplo, no nosso caso, a chave é o nome e o valor é José, já o outro campo a chave é idade e o valor é 32.
@@ -82,133 +98,169 @@ A seguir, aprenderemos como podemos acessar essas informações do objeto, ou se
 
 ### Acessando dados
 
-    acesso-ponto.js
+```javascript
+acesso-ponto.js
+```
 
 Nesta aula, aprenderemos como acessar as propriedades de um objeto.
 Vamos voltar ao VSCode, e dentro da pasta aula1, criaremos um arquivo chamado acesso_ponto.js. Para isso, selecionaremos a pasta aula1, clicaremos no primeiro ícone do lado direito da pasta OBJETOS e digitaremos "acesso_ponto.js".
 No arquivo criado, vamos imaginar um trecho simplificado de uma aplicação que temos uma loja, em que temos clientes. Vamos modelar, isto é, traduzir algumas informações físicas ou características em um objeto. Logo, vamos modelar um cliente.
 Iniciaremos o código com const cliente que vai receber as propriedades do objeto.
 
-    acesso-ponto.js
+```javascript
+acesso-ponto.js
+```
+```javascript
+const cliente = {
 
-    const cliente = {
-
-    }
+}
+```
 
 Vamos inserir as propriedades e seus respectivos valores dentro das chaves "{}":
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
+```
 
 Digamos que no projeto desejamos acessar qual o nome desse cliente e escrever uma mensagem customizada e exibi-la no terminal. Com esse objetivo, digitaremos console.log(), se colocarmos "cliente" dentro do parêntese, temos o objeto com todos os campos.
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
-
-    console.log(cliente)
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
+```
+```javascript
+console.log(cliente)
+```
 
 Após inserir essa linha no código, abriremos o terminal e chamaremos o node para executar esse código.
 
-    acesso-ponto.js
-
-    {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    }
+```javascript
+acesso-ponto.js
+```
+```javascript
+{
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+}
+```
 
 Note que foi exibido o objeto com todos os campos, sendo eles: nome, idade, cpf e e-mail. Mas não é isso que queremos, desejamos exibir somente o nome desse cliente.
 Para isso, podemos usar o operador ponto ".". Voltando para o arquivo acesso_ponto.js, após cliente colocaremos ..
 
-    console.log(cliente.)
+```javascript
+console.log(cliente.);
+```
 
 Note que ao inserirmos o ponto, o próprio VSCode sugere as seguintes opções:
 
-    cpf
-    email
-    idade
-    nome
-    abc cliente
-    abc console
-    abc log
+* cpf
+* email
+* idade
+* nome
+* abc cliente
+* abc console
+* abc log
 
 São os dados separados do cliente, clicaremos em "nome".
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
-
-    console.log(cliente.nome)
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
+```
+```javascript
+console.log(cliente.nome)
+```
 
 Salvaremos novamente o arquivo, clicando em "Ctrl + S" e voltaremos ao terminal, para executar o mesmo comando que rodamos anteriormente.
 
+```javascript
     acesso-ponto.js
-
-    Andre
+```
+* Andre
 
 Nos devolveu somente o nome André!
 Voltando para o VSCode, vamos escrever uma mensagem customizada para melhorar a visualização. Com esse objetivo, vamos começar removendocliente.nome e escrevendo uma template string utilizando duas crases "":
 
-    console.log(``)
+```javascript
+console.log(``)
+```
 
 Dentro dessas crases, vamos inserir a mensagem que desejamos exibir:
 
-    console.log(`O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`);
+```javascript
+console.log(`O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`);
+```
 
 Lembrando que ${} é a marcação de um valor que será lido. De novo, salvaremos o arquivo e voltaremos ao terminal para executar o comando node.
 
-    acesso-ponto.js
-
-    O nome do cliente é Andre e essa pessoa tem 32 anos.
+```javascript
+acesso-ponto.js
+```
+```git
+O nome do cliente é Andre e essa pessoa tem 32 anos.
+```
 
 Desse modo, temos uma mensagem customizada com os campos de um objeto. Portanto, podemos usar o operador ponto para retornar o valor de uma propriedade.
 Outra coisa que podemos fazer, também, é chamar métodos desse valor recebido. Criaremos outro console.log() no final do arquivo e novamente escrever uma template string:
 
-    console.log(`Os 3 primeiros dígitos do CPF são`);
+```javascript
+console.log(`Os 3 primeiros dígitos do CPF são`);
+```
 
 Agora, podemos inserir o valor com a marcação ${} e chamar o cliente.cpf:
 
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf}`);
+```javascript
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf}`);
+```
 
 Dessa forma, será exibido o cpf com todos os dígitos. Mas como estamos operando uma string dentro desse valor, sabemos que as strings possuem alguns métodos.
 Podemos acessar cliente.cpf e pedir somente uma substring do valor especificado. Na substring() passaremos os valores 0 e 3.
 
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```javascript
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```
 
 Código completo do arquivo acesso_ponto.js:
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
 
-    console.log(
-      `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
-    );
+console.log(
+  `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
+);
 
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```
 
 Após inserirmos esse console.log, voltaremos ao terminal e rodaremos novamente o comando node.
 
-    acesso-ponto.js
+```git
+acesso-ponto.js
+```
 
-    O nome do cliente é Andre e essa pessoa tem 32 anos.
+* O nome do cliente é Andre e essa pessoa tem 32 anos.
 
-    Os 3 primeiros dígitos do CPF são 112
+* Os 3 primeiros dígitos do CPF são 112
 
 Conseguimos exibir somente os três primeiros dígitos do CPF do cliente!
 Assim, aprendemos que conseguimos acessar o valor de uma propriedade de um objeto e manipulá-lo.
@@ -216,85 +268,98 @@ Assim, aprendemos que conseguimos acessar o valor de uma propriedade de um objet
 
 ### Acessando dados com colchetes
 
-    acesso-colchete.js
+```javascript
+acesso-colchete.js
+```
 
 Na aula anterior, vimos como acessar uma propriedade usando o operador ponto, mas vamos entender que essa não é a única maneira que temos para acessá-las.
 Para demonstrar essa outra maneira, podemos selecionar o código inteiro do arquivo acesso_ponto.js e copiá-lo usando "Ctrl + C".
 Após copiar, à esquerda em "Explorer", clicaremos no primeiro ícone para criarmos um novo arquivo chamado "acesso_colchete.js" dentro da pasta aula1.
 Com isso, ficamos os as seguintes pastas até o momento:
 
-    aula1
-    acesso_colchetes.js
-    acesso_ponto.js
-    objeto.js
+* aula1
+* acesso_colchetes.js
+* acesso_ponto.js
+* objeto.js
 
  No arquivo acesso_colchete.js, colaremos o código que copiamos anteriormente.
 
-    acesso_colchete.js
+```javascript
+acesso_colchete.js
+```
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+console.log(
+  `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
+);
 
-    console.log(
-      `O nome do cliente é ${cliente.nome} e essa pessoa tem ${cliente.idade} anos.`
-    );
-
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
-
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```
 A maneira como podemos acessar as propriedades é usando o operador de colchetes, similar ao que usávamos ao usar arrays.
 No template string do primeiro console.log, podemos acessar o nome usando os colchetes: client["nome"] e aplicamos da mesma forma para o campo idade.
 
- acesso_colchete.js:
+```javascript
+acesso_colchete.js:
+```
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+console.log(
+  `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
+);
 
-    console.log(
-      `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
-    );
-
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
-
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```
 Podemos salvar e validar voltando no terminal para executar o comando node.
 
-    acesso-colchete.js
+```javascript
+acesso-colchete.js
+```
+```git
+O nome do cliente é Andre e essa pessoa tem 32 anos.
 
-    O nome do cliente é Andre e essa pessoa tem 32 anos.
-
-    Os 3 primeiros dígitos do CPF são 112
-
+Os 3 primeiros dígitos do CPF são 112
+```
 Obtivemos o mesmo retorno de quando usamos o operador ponto. Mas qual a diferença entre essas formas?
 Às vezes temos um objeto para receber, que não necessariamente sabemos no momento de escrever o código, quais são as propriedades.
 Neste exemplo estamos com um caso simples, em que visualizamos o nome das propriedades sem problema nenhum. Porém, nem todos os casos são assim, principalmente se tiver muitas propriedades.
 Vamos remover o segundo console.log:
 
-    console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```javascript
+console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`);
+```
 
 Assim, ficamos com o arquivo acesso_colchete.js da seguinte forma até o momento:
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
 
-    console.log(
-      `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
-    );
-
+console.log(
+  `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
+);
+```
 Após o console.log vamos escrever um trecho de código assumindo que não sabemos os valores das chaves. Vamos supor que as chaves foram passadas como parâmetro para nós, por isso, no final no arquivo colocaremos uma const chaves = [].
 Dentro dela, teremos um array com todos os valores da chave.
 
-    const chaves = ["nome", "idade", "cpf", "email"];
+```javascript
+const chaves = ["nome", "idade", "cpf", "email"];
+```
 
 O que podemos fazer com essa informação? Temos uma lista, vimos o método de lista e é possível percorrermos essa lista e capturar cada valor.
 Para tal, usaremos chaves.forEach() e dentro passaremos uma função que será chamada para cada valor daquela chave.
