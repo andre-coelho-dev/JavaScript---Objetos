@@ -2044,7 +2044,7 @@ Apesar de prático, o uso da sintaxe de espalhamento pode gerar bastante process
 
 Caso queira, temos outra explicação deste processo aqui no [artigo ES6 - Desestruturando objetos presente na nossa plataforma](https://www.alura.com.br/artigos/es6-desestruturando-objetos?_gl=1*1yumh7b*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDM1MDY2MS4yLjEuMTY5NDM1Mjc1My4wLjAuMA..*_fplc*V0VxU21icHV1ZXJxa2kwMVpXWmxKNGNFcjVza0JJRjFLY28xdHZVS2tBZldNeWtaS3BqOHozR0FCaWUlMkJ1MWtrZDN5UUZvTms0ZVBwVyUyRmJvTERmcCUyQlA2cHdreFR3WWgwUjcxSmxCVFJGS0FWbWV5d1d2dTBhbEtQM2FDZDBnJTNEJTNE).
 
-[Destructuring em JavaScrip](https://youtu.be/f8a-qwKC5yk)
+[Video - Destructuring em JavaScrip](https://youtu.be/f8a-qwKC5yk)
 
 
 ### O que aprendemos?
