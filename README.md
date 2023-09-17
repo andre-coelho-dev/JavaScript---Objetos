@@ -7,7 +7,7 @@ objeto.js
 ```
 
 ### O que são objetos
-
+***
 Nesta aula, começaremos a abordar a questão dos objetos em JavaScript.
 Para isso, abriremos o Visual Studio Code com a pasta OBJETOS vazia e selecionaremos o segundo ícone para criarmos uma pasta.
 Colocando o mouse por cima do ícone de pasta, será exibida a mensagem "New Folder" ("nova pasta") e ao selecionarmos ela, abrirá um campo abaixo em que digitaremos o nome que queremos atribuir ao diretório, no caso será "aula1".
@@ -97,7 +97,7 @@ A seguir, aprenderemos como podemos acessar essas informações do objeto, ou se
 
 
 ### Acessando dados
-
+***
 ```javascript
 acesso-ponto.js
 ```
@@ -164,13 +164,15 @@ console.log(cliente.);
 
 Note que ao inserirmos o ponto, o próprio VSCode sugere as seguintes opções:
 
-* cpf
-* email
-* idade
-* nome
-* abc cliente
-* abc console
-* abc log
+```git
+cpf
+email
+idade
+nome
+abc cliente
+abc console
+abc log
+```
 
 São os dados separados do cliente, clicaremos em "nome".
 
@@ -189,9 +191,11 @@ console.log(cliente.nome)
 Salvaremos novamente o arquivo, clicando em "Ctrl + S" e voltaremos ao terminal, para executar o mesmo comando que rodamos anteriormente.
 
 ```javascript
-    acesso-ponto.js
+acesso-ponto.js
 ```
-* Andre
+```git
+Andre
+```
 
 Nos devolveu somente o nome André!
 Voltando para o VSCode, vamos escrever uma mensagem customizada para melhorar a visualização. Com esse objetivo, vamos começar removendocliente.nome e escrevendo uma template string utilizando duas crases "":
@@ -254,20 +258,21 @@ console.log(`Os 3 primeiros digitos do CPF são ${cliente.cpf.substring(0, 3)}`)
 
 Após inserirmos esse console.log, voltaremos ao terminal e rodaremos novamente o comando node.
 
-```git
+```javascript
 acesso-ponto.js
 ```
+```git
+O nome do cliente é Andre e essa pessoa tem 32 anos.
 
-* O nome do cliente é Andre e essa pessoa tem 32 anos.
-
-* Os 3 primeiros dígitos do CPF são 112
+Os 3 primeiros dígitos do CPF são 112
+```
 
 Conseguimos exibir somente os três primeiros dígitos do CPF do cliente!
 Assim, aprendemos que conseguimos acessar o valor de uma propriedade de um objeto e manipulá-lo.
 
 
 ### Acessando dados com colchetes
-
+***
 ```javascript
 acesso-colchete.js
 ```
@@ -277,10 +282,12 @@ Para demonstrar essa outra maneira, podemos selecionar o código inteiro do arqu
 Após copiar, à esquerda em "Explorer", clicaremos no primeiro ícone para criarmos um novo arquivo chamado "acesso_colchete.js" dentro da pasta aula1.
 Com isso, ficamos os as seguintes pastas até o momento:
 
-* aula1
-* acesso_colchetes.js
-* acesso_ponto.js
-* objeto.js
+```git
+aula1
+acesso_colchetes.js
+acesso_ponto.js
+objeto.js
+```
 
  No arquivo acesso_colchete.js, colaremos o código que copiamos anteriormente.
 
@@ -366,70 +373,84 @@ Para tal, usaremos chaves.forEach() e dentro passaremos uma função que será c
 A propriedade que vamos ter do array é cada uma das chaves, logo dentro do parêntese incluiremos outro parêntese e digitaremos "chave": chaves.forEach((chave)). Nela, teremos uma arrow function em que listaremos as chaves e seus respectivos valores e exibiremos usando console.log().
 No console.log() usaremos uma template string para passarmos uma mensagem customizada, chamando a chave que desejamos exibir.
 
-    chaves.forEach((chave) => {
-      console.log(`A chave ${chave} tem valor`);
-    });
+```javascript
+chaves.forEach((chave) => {
+  console.log(`A chave ${chave} tem valor`);
+});
+```
 
 Por estarmos assumindo que não sabemos os nomes das chaves, usamos o operador de colchetes dentro do objeto: ${cliente[chave].
-  
-    chaves.forEach((chave) => {
-      console.log(`A chave ${chave} tem valor ${cliente[chave]}`);
-    });
+
+```javascript  
+chaves.forEach((chave) => {
+  console.log(`A chave ${chave} tem valor ${cliente[chave]}`);
+});
+```
 
 Ou seja, o valor da chave é uma string, e uma string dentro de colchetes depois de um objeto, nos permite acessar determinada propriedade.
 
-    acesso-colchete.js
+```javascript
+acesso-colchete.js
+```
+```javascript
+const cliente = {
+  nome: "Andre",
+  idade: 32,
+  cpf: "1122233345",
+  email: "andre@dominio.com",
+};
 
-    const cliente = {
-      nome: "Andre",
-      idade: 32,
-      cpf: "1122233345",
-      email: "andre@dominio.com",
-    };
+console.log(
+  `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
+);
 
-    console.log(
-      `O nome do cliente é ${cliente["nome"]} e essa pessoa tem ${cliente["idade"]} anos.`
-    );
+const chaves = ["nome", "idade", "cpf", "email"];
 
-    const chaves = ["nome", "idade", "cpf", "email"];
-
-    chaves.forEach((chave) => {
-      console.log(`A chave ${chave} tem valor ${cliente[chave]}`);
-    });
+chaves.forEach((chave) => {
+  console.log(`A chave ${chave} tem valor ${cliente[chave]}`);
+});
+```
 
 Para validarmos, voltaremos ao terminal e executamos novamente o comando node.
 
-    acesso-colchete.js
+```javascript
+acesso-colchete.js
+```
+```git
+O nome do cliente é Andre e essa pessoa tem 32 anos.
 
-    O nome do cliente é Andre e essa pessoa tem 32 anos.
+A chave nome tem valor Andre
 
-    A chave nome tem valor Andre
+A chave idade tem valor 32
 
-    A chave idade tem valor 32
+A chave cpf nome tem valor 1122233345
 
-    A chave cpf nome tem valor 1122233345
-
-    A chave email tem valor andre@dominio.com
+A chave email tem valor andre@dominio.com
+```
 
 Perceba que exibiu a mensagem do código anterior e agora temos todas as chaves listadas com seus respectivos valores.
 Assim, aprendemos que com a sintaxe de colchetes podemos acessar campos que não temos acesso no momento em que estamos escrevendo o código. Com isso, flexibilizamos o uso das chaves, das propriedades e dos objetos.
 Uma coisa que podemos fazer, também, é analisar o que acontece ao tentarmos acessar uma chave que não existe. Para testarmos, em const chaves incluiremos altura.
 
-    const chaves = ["nome", "idade", "cpf", "email", "altura"];
+```javascript
+const chaves = ["nome", "idade", "cpf", "email", "altura"];
+```
 
 Após feita essa alteração, salvaremos o arquivo e voltamos ao terminal para executar o comando node aula1/acesso_colchete.js.
 
-    O nome do cliente é Andre e essa pessoa tem 32 anos.
+```git
+O nome do cliente é Andre e essa pessoa tem 32 anos.
 
-    A chave nome tem valor Andre
+A chave nome tem valor Andre
 
-    A chave idade tem valor 32
+A chave idade tem valor 32
 
-    A chave cpf nome tem valor 1122233345
+A chave cpf nome tem valor 1122233345
 
-    A chave email tem valor andre@dominio.com
+A chave email tem valor andre@dominio.com
 
-    A chave altura tem valor undefined
+A chave altura tem valor undefined
+```
 
 A última linha é a chave altura, em que o valor foi devolvido como undefined ("indefinido"). O undefined é um valor reservado do JavaScript (sendo uma palavra especial) devolvido ao tentarmos acessar uma propriedade que não existe.
 Não retorna erro e não vai quebrar o código, mas o campo é devolvido com o valor undefined.
@@ -437,7 +458,7 @@ Aprendemos que podemos acessar os campos de um objeto, e que temos a notação d
 
 
 ### Acesse os dados
-
+***
 No JavaScript, vimos que objetos são estruturas de dados compostas por chave e valor, informações que ajudam a representar algo da vida real ou um conjunto de informações que faz sentido quando agrupado. Observe a representação abaixo:
 
     const pet = {
