@@ -470,17 +470,18 @@ No JavaScript, vimos que objetos são estruturas de dados compostas por chave e 
 
 Ao tentar acessar pet.dataDeNascimento iremos obter a string ”12/03/2017”.
 
-#### -> Podemos usar o operador . para acessar as propriedades que já conhecemos de um objeto.
+* Podemos usar o operador . para acessar as propriedades que já conhecemos de um objeto.
 
-Ao tentar acessar pet[“brinquedoFavorito”] iremos obter a string ”bolinha”.
+Ao tentar acessar pet`[“brinquedoFavorito”]` iremos obter a `string` ”bolinha”.
 
-#### -> Podemos utilizar o nome da propriedade como string dentro de colchetes [“propriedade”] para acessar as propriedades de um objeto de forma mais dinâmica.
+* Podemos utilizar o nome da propriedade como string dentro de colchetes `[“propriedade”]` para acessar as propriedades de um objeto de forma mais dinâmica.
 
 
 ### Adicionando e alterando
-
-    alterar.js
-
+***
+```javascript
+alterar.js
+```
 Agora que sabemos acessar os valores das propriedades dos objetos, é interessante aprendermos como manipular, alterar ou criar novas propriedades.
 No VSCode, clicaremos no ícone "New File" ("Novo arquivo"), para criar um novo arquivo chamado "alterar.js" dentro da pasta aula1.
 Dentro do arquivo criado, inserimos um novo objeto const pessoa e atribuímos usando o sinal de igual "=" bloco de chaves. Nele, teremos o nosso objeto.
@@ -646,15 +647,13 @@ Por enquanto, esse conhecimento é satisfatório para seguirmos com o curso. Nes
 
 
 ### Para saber mais: tipos de variáveis e objetos
-
+***
 Na última aula, vimos que podemos alterar e manipular as propriedades de um objeto mesmo quando o objeto está armazenado em uma variável do tipo const.
-Temos um artigo na plataforma que explica as diferenças entre as variáveis que podemos declarar, mas vale lembrar que as variáveis do tipo const apenas não podem ser reatribuidas, mas podem ter seu conteúdo interno alterado.
-
-#### ->https://www.alura.com.br/artigos/entenda-diferenca-entre-var-let-e-const-no-javascript?_gl=1*4a2um6*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDExMzg3MC4xNC4xLjE2OTQxMTU4NDEuMC4wLjA.*_fplc*VFhUem41UndVNFFQRzN2TjB3RWp3dnpwTGdyUGx5WkE1RTJDYlB1VkdXQmg4SDB4Z1NXenNhT2tUNUslMkJiUTZFWDFGZURHVDhqRUQzZDlPNDM2QlFlWGRIWnEzNUEybnE1M3kyRSUyQm8xbjVRQ3NIcjk4Zzh4bTklMkYlMkJETUg2bnclM0QlM0Q.
+Temos um [artigo](https://www.alura.com.br/artigos/entenda-diferenca-entre-var-let-e-const-no-javascript?_gl=1*4a2um6*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDExMzg3MC4xNC4xLjE2OTQxMTU4NDEuMC4wLjA.*_fplc*VFhUem41UndVNFFQRzN2TjB3RWp3dnpwTGdyUGx5WkE1RTJDYlB1VkdXQmg4SDB4Z1NXenNhT2tUNUslMkJiUTZFWDFGZURHVDhqRUQzZDlPNDM2QlFlWGRIWnEzNUEybnE1M3kyRSUyQm8xbjVRQ3NIcjk4Zzh4bTklMkYlMkJETUg2bnclM0QlM0Q.) na plataforma que explica as diferenças entre as variáveis que podemos declarar, mas vale lembrar que as variáveis do tipo const apenas não podem ser reatribuidas, mas podem ter seu conteúdo interno alterado.
 
 
 ### Para saber mais: como deletar uma propriedade?
-
+***
 Já vimos como acessar, alterar e adicionar valores em um objeto. Mas ainda faltou falarmos sobre um caso: e quando queremos deletar um conjunto de chave/valor?
 Vamos considerar o objeto abaixo:
 
@@ -723,16 +722,16 @@ Usando a representação do objeto pessoa, foi solicitado que adicionássemos os
 
 Para adicionar as novas propriedades precisamos somente informar o novo campo e o seu valor, ou seja,pessoa.cpf="15346626522-65" e pessoa.seguroSocial="854321985-9" .Para exibir os 4 primeiros dígitos da identidade e CPF, podemos chamar uma função de string chamada substring() e passar início e o fim da string que queremos como pessoa.cpf.substring(0,4).
 
-#### -> Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
+* Podemos usar a notação de ponto para adicionar novos campos a objetos já criados, lembrando de iniciar o campo adicionado. Como os campos identidade e CPF são do tipo string, podemos invocar o método substring() passando para a função a faixa da string que queremos retornar.
 
 
 ### Faça como eu fiz: criando objetos
-
+***
 Nesta aula, começamos a aprender sobre a estrutura de dados chamada de objetos no Javascript, muito importante em linguagens de programação modernas. Estudamos como criar um objeto, adicionar propriedades e alterar seus valores.
 
 
 ### O que aprendemos?
-
+***
 Nessa aula, você aprendeu:
 Que objeto é um tipo de dado que reflete uma abstração dos objetos da vida real;
 Que a estrutura de um objeto literal no JavaScript é composta por pares de chave: valor separados por vírgula, dentro de chaves { };
@@ -1381,15 +1380,13 @@ Como podemos contornar esse comportamento quando criamos objetos? Além de utili
     console.log(objPersonagem2.nome) //Gandalf, o Cinzento
 
 O método Object.create() cria um novo objeto utilizando como protótipo o objeto passado via parâmetro. Dessa forma, objPersonagem2 é uma instância diferente de objPersonagem e pode ser trabalhada de forma independente.
-Você pode ver mais exemplos desse método na documentação do MDN.
-
-#### -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+Você pode ver mais exemplos desse método na [documentação do MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
 
 Nas próximas aulas veremos também outra forma de criar objetos ao utilizar funções construtoras.
 
 
 ### Manipulando objetos
-
+***
 Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dados, desde primitivos (string, number, bool) até tipos mais elaborados como arrays ou outros objetos. Observe o código abaixo:
 
     const cliente = {
@@ -1414,7 +1411,7 @@ Trabalhar com objetos no Javascript permite que utilizemos diversos tipos de dad
 Na representação do cliente, o objeto é composto por outras propriedades de diversos tipos e objetos.
 O cliente possui uma propriedade chamada animalEstimacao, um array de objetos, o que nos permite usar funções comuns a arrays como filter().
 
-#### -> Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
+* Um objeto pode conter um array de objetos, o que nos permite invocar desde funções comuns até arrays como filter().
 
 
 ### O que aprendemos
@@ -1484,7 +1481,7 @@ Agora, podemos mostrar o que está sendo salvo dentro desse valor. Por isso, apl
         console.log(chave);
     }
 
-Lembrando que desejamos montar um relatório com esses campos. Podemos salvar as modificações clicando em "Ctrl + S" e depois vamos ao terminal rodar o comando node:
+Lembrando que desejamos montar um relatório com esses campos. Podemos salvar as modificações clicando em `"Ctrl + S"` e depois vamos ao terminal rodar o comando node:
 
     repeticao.js
 
@@ -1495,7 +1492,7 @@ Lembrando que desejamos montar um relatório com esses campos. Podemos salvar as
     enderecos
 
 Foi percorrido todos esses campos, sendo as chaves com os nomes das propriedades.
-Voltando ao código, se escrevemos desta forma e conseguimos acessar a chave, se tentarmos fazer (cliente[chave]) obteremos qual o valor salvo dentro dessa propriedade.
+Voltando ao código, se escrevemos desta forma e conseguimos acessar a chave, se tentarmos fazer `(cliente[chave])` obteremos qual o valor salvo dentro dessa propriedade.
 
     for (let chave in cliente) {
         console.log(cliente[chave]);
@@ -1519,7 +1516,7 @@ Podemos salvar e voltar ao terminal para rodarmos o comando:
     ]
 
 O primeiro valor é João, com a idade de 24 anos, um e-mail, os telefones e o endereço, sendo um array com um objeto dentro. Tudo certo.
-Voltaremos ao código, e para montarmos o relatório podemos remover o cliente[chave] e inserir uma template string para escrever por extenso o que obtivemos.
+Voltaremos ao código, e para montarmos o relatório podemos remover o `cliente[chave]` e inserir uma template string para escrever por extenso o que obtivemos.
 
     for (let chave in cliente) {
         console.log(`A chave ${chave} tem o valor ${cliente[chave]}`);
@@ -1535,7 +1532,7 @@ Podemos salvar e voltar ao terminal para novamente rodar o comando node aula3/re
 
 Retornou um problema somente na última chave, sendo a enderecos que o valor retornou object Object. Tem um detalhe que o objeto, quando ele tentou escrever dentro dessa expressão, retornou object Object, isso é um comportamento do Javascript.
 Para resolvermos esse problema neste cenário, podemos filtrar os outros campos e aplicar um tratamento diferente para o que é um objeto.
-Para incluir um filtro, checamos o tipo do objeto. Para isso, criaremos uma variável let tipo dentro do laço de repetição for e antes do console log, para salvar o tipo: let tipo = typeof cliente[chave];.
+Para incluir um filtro, checamos o tipo do objeto. Para isso, criaremos uma variável let tipo dentro do laço de repetição for e antes do console log, para salvar o tipo: `let tipo = typeof cliente[chave];`.
 
     for (let chave in cliente) {
         let tipo = typeof cliente[chave];
@@ -1596,7 +1593,7 @@ Posso utilizar o método for..In como loop e exibir somente as propriedades do o
       `}
     };
 
-#### -> O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, uma delas é usar o typeof e verificar o tipo da propriedade.
+* O for...in permite iterar sobre as propriedades de um objeto. No caso desse loop, temos a flexibilidade de percorrer o objeto e executar uma série de comparações, uma delas é usar o typeof e verificar o tipo da propriedade.
 
 Para a execução do código:
 
@@ -1606,7 +1603,7 @@ Para a execução do código:
 
 A saída esperada é a listagem do nome das propriedades do objeto paciente.
 
-#### -> O loop definido no for...in irá retornar para a variável info que é o nome da chave do objeto, ou seja, o nome da propriedade do objeto.
+* O loop definido no for...in irá retornar para a variável info que é o nome da chave do objeto, ou seja, o nome da propriedade do objeto.
 
 
 ### Métodos de objeto
@@ -1766,16 +1763,15 @@ Além do método keys, a classe nos fornece vários outros métodos que deixarem
 ### Para saber mais: outros métodos de objetos
 
 Para aprofundar seus conhecimentos, que tal conhecer o funcionamento dos objetos em JavaScript?
-Acesse a documentação do MDN, que é uma ótima referência aos nossos estudos e amplie os conhecimentos dos métodos e práticas que realizamos até agora.
+Acesse a [documentação do MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_Objects), que é uma ótima referência aos nossos estudos e amplie os conhecimentos dos métodos e práticas que realizamos até agora.
 Sabemos que o ecossistema JavaScript é bem vasto e sofre diversas mudanças em função do tempo, então vale a pena dedicarmos um tempo para olhar a documentação e dar uma lida com calma.
-
-#### -> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_Objects
 
 
 ### Sintaxe de espalhamento
-
-    espalhamento.js
-
+***
+```javascript
+espalhamento.js
+```
 Nesta aula, vamos aprender um pouco sobre a sintaxe de espalhamento e como podemos utilizá-la com objetos. Talvez você lembre do curso anterior, em que tivemos que usá-la para compor e decompor arrays.
 Voltando ao VSCode, podemos remover o comentário do arquivo chaves.js:
 
@@ -2046,15 +2042,13 @@ Perceba que o JavaScript sobrescreve as chaves com o mesmo nome a cada ocorrênc
 
 Apesar de prático, o uso da sintaxe de espalhamento pode gerar bastante processamento, então deve ser usado com cuidado em caso de loops ou funções recursivas.
 
-Caso queira, temos outra explicação deste processo aqui no artigo ES6 - Desestruturando objetos presente na nossa plataforma.
+Caso queira, temos outra explicação deste processo aqui no [artigo ES6 - Desestruturando objetos presente na nossa plataforma](https://www.alura.com.br/artigos/es6-desestruturando-objetos?_gl=1*1yumh7b*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDM1MDY2MS4yLjEuMTY5NDM1Mjc1My4wLjAuMA..*_fplc*V0VxU21icHV1ZXJxa2kwMVpXWmxKNGNFcjVza0JJRjFLY28xdHZVS2tBZldNeWtaS3BqOHozR0FCaWUlMkJ1MWtrZDN5UUZvTms0ZVBwVyUyRmJvTERmcCUyQlA2cHdreFR3WWgwUjcxSmxCVFJGS0FWbWV5d1d2dTBhbEtQM2FDZDBnJTNEJTNE).
 
-#### -> https://www.alura.com.br/artigos/es6-desestruturando-objetos?_gl=1*1yumh7b*_ga*MTIyMzM4MDk5NC4xNjkyNzQ1NDk5*_ga_1EPWSW3PCS*MTY5NDM1MDY2MS4yLjEuMTY5NDM1Mjc1My4wLjAuMA..*_fplc*V0VxU21icHV1ZXJxa2kwMVpXWmxKNGNFcjVza0JJRjFLY28xdHZVS2tBZldNeWtaS3BqOHozR0FCaWUlMkJ1MWtrZDN5UUZvTms0ZVBwVyUyRmJvTERmcCUyQlA2cHdreFR3WWgwUjcxSmxCVFJGS0FWbWV5d1d2dTBhbEtQM2FDZDBnJTNEJTNE
-
-#### -> https://youtu.be/f8a-qwKC5yk
+[Destructuring em JavaScrip](https://youtu.be/f8a-qwKC5yk)
 
 
 ### O que aprendemos?
-
+***
 Nesta aula, você aprendeu:
 Como percorrer objetos a partir das chaves com for...in, iterando sobre as propriedades de um objeto como em um array;
 Que para extrair chaves e valores de objetos é possível utilizar métodos de Object;
